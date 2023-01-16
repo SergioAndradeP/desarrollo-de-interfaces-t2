@@ -1,13 +1,10 @@
 <resources>
     <string name="app_name">Gestor de tareas</string>
     <string-array name="tareas_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+        <item>Hogar</item>
+        <item>Ocio</item>
+        <item>Deporte</item>
+        <item>Trabajo</item>
+        <item>Tareas de casa</item>
     </string-array>
 </resources>

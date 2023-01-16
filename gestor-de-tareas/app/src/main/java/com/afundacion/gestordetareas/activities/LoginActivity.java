@@ -25,6 +25,13 @@ public class LoginActivity extends AppCompatActivity {
         botonLogin = findViewById(R.id.boton_login);
         botonRegistro = findViewById(R.id.boton_registro);
 
+        botonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         botonRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,6 +39,5 @@ public class LoginActivity extends AppCompatActivity {
                 context.startActivity(registro);
             }
         });
-
     }
 }

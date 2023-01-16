@@ -1,0 +1,37 @@
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/drawer_layout"
+    tools:openDrawer="start">
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#6F95F5"
+        app:headerLayout="@layout/cabecera_drawerlayout"
+        app:menu="@menu/navigator_menu">
+    </com.google.android.material.navigation.NavigationView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/teal_700"
+            android:minHeight="?attr/actionBarSize"
+            app:title="Menú Gestor">
+        </androidx.appcompat.widget.Toolbar>
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </FrameLayout>
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

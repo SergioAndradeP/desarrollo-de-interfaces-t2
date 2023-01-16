@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Gestor de tareas</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="navigator_open">Open nav</string>
+    <string name="navigator_close">Close nav</string>
+
 </resources>

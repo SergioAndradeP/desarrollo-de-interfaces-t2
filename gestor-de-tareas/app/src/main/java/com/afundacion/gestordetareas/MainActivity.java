@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                                         e.printStackTrace();
                                     }
                                 }
-                                T
+
                                 //Creamos el adaptador y se lo pasamos al reciclerView
                                 TaskRecyclerViewAdapter adapter= new TaskRecyclerViewAdapter(listaTasks,activity);
                                 recyclerView.setAdapter(adapter);
@@ -125,9 +125,9 @@ public class MainActivity extends AppCompatActivity {
         if(Integer.parseInt(dateSplitted[2]) > pYear){
             return true;
         } else if (Integer.parseInt(dateSplitted[2])==pYear && Integer.parseInt(dateSplitted[1])>pMonth){
-            return true
+            return true;
         } else if(Integer.parseInt(dateSplitted[1])==pMonth && Integer.parseInt(dateSplitted[0])>=pDay){
-            return true
+            return true;
         }
         return false;
     }

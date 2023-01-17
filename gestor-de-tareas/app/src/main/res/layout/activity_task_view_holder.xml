@@ -4,14 +4,17 @@
     android:layout_height="wrap_content"
     app:layout_constraintStart_toStartOf="parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/holder">
+    android:id="@+id/holder"
+    android:layout_marginBottom="10dp">
 
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tarea: "
+        android:background="#F6D55C"
+        android:textAlignment="center"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,10 +27,12 @@
 
     <TextView
         android:id="@+id/date"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Fecha: "
         android:textSize="12sp"
+        android:textAlignment="center"
+        android:background="#4CAF50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title"
@@ -38,10 +43,12 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Descripción: "
         android:textSize="12sp"
+        android:textAlignment="center"
+        android:background="#2196F3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/date"

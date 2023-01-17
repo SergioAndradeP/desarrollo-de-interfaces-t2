@@ -76,8 +76,9 @@
         android:layout_marginTop="5dp"
         android:ems="10"
         android:inputType="date"
-        android:text="Fecha limite de la tarea"
+        android:text="00/00/2000"
         android:id="@+id/rellenarFecha"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,6 +112,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tareas_spinner"
-        android:layout_marginTop="150dp"/>
+        android:layout_marginTop="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

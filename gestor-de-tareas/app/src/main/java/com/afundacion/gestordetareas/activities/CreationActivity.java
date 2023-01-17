@@ -1,10 +1,14 @@
 package com.afundacion.gestordetareas.activities;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,13 +22,16 @@ import java.util.Date;
 import java.util.Locale;
 
 public class CreationActivity extends AppCompatActivity {
-    Spinner spinner;
-    EditText titulo;
-    EditText fecha;
-    EditText description;
-    Button submit;
-
-    Date data;
+    private Spinner spinner;
+    private EditText titulo;
+    private EditText fecha;
+    private EditText description;
+    private TextView fechaT;
+    TextView tituloT;
+    TextView descripcionT;
+    private Button submit;
+    private Context context = this;
+    private Date data;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,23 +45,38 @@ public class CreationActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        //Formateamos la fecha y metemos una string a un objeto tipo calendar
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-        Calendar calendar = Calendar.getInstance();
-
-        try {
-            data = dateFormat.parse(fecha.getText().toString());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        calendar.setTime(data);
-
-
+        fechaT = findViewById(R.id.fechaTarea);
+        fecha = findViewById(R.id.rellenarFecha);
         titulo = findViewById(R.id.rellenarTitulo);
+        tituloT = findViewById(R.id.tituloTarea);
         description = findViewById(R.id.rellenarDescripcion);
+        descripcionT = findViewById(R.id.descripcionTarea);
         submit = findViewById(R.id.submit);
 
-        
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Formateamos la fecha y metemos una string a un objeto tipo calendar
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                Calendar calendar = Calendar.getInstance();
+
+                try {
+                    if(fecha.getText() == null){
+                        data = dateFormat.parse("10/10/2000");
+                    }else{
+                        data = dateFormat.parse(fecha.getText().toString());
+                    }
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                calendar.setTime(data);
+
+
+
+                Toast.makeText(context,"Pulsado",Toast.LENGTH_LONG).show();
+            }
+        });
 
 
     }

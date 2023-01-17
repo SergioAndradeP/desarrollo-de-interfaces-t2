@@ -39,6 +39,9 @@
         <activity
             android:name=".utils.MenuActivity"
             android:exported="false" />
+        <activity
+            android:name=".activities.CreationActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

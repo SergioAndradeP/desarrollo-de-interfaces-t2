@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Gestor de tareas</string>
+    <string name="navigator_open">Open nav</string>
+    <string name="navigator_close">Close nav</string>
     <string-array name="tareas_array">
         <item>Hogar</item>
         <item>Ocio</item>
@@ -7,4 +9,5 @@
         <item>Trabajo</item>
         <item>Tareas de casa</item>
     </string-array>
+
 </resources>

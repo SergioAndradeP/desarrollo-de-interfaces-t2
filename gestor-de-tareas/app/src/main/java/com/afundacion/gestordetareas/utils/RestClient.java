@@ -1,12 +1,6 @@
 package com.afundacion.gestordetareas.utils;
 
-import static android.content.Context.MODE_PRIVATE;
-
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.widget.EditText;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -40,4 +34,27 @@ public class RestClient {
     }
 
     // Métodos que lanzan peticiones
+
+    public void submitTarea(String titulo, String descripcion, String fecha, String tipo){
+        JSONObject tarea = new JSONObject();
+
+        try{
+            tarea.put("title",titulo);
+            tarea.put("description",descripcion);
+            tarea.put("date",fecha);
+            tarea.put("type",tipo);
+
+        }catch (JSONException e){
+            throw new RuntimeException(e);
+
+        }
+        
+
+
+
+
+
+
+
+    }
 }

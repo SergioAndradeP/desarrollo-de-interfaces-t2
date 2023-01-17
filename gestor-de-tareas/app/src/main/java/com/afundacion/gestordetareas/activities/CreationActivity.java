@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.afundacion.gestordetareas.R;
+import com.afundacion.gestordetareas.utils.MenuActivity;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -21,7 +22,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class CreationActivity extends AppCompatActivity {
+public class CreationActivity extends MenuActivity {
     private Spinner spinner;
     private EditText titulo;
     private EditText fecha;
@@ -45,12 +46,11 @@ public class CreationActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        fechaT = findViewById(R.id.fechaTarea);
         fecha = findViewById(R.id.rellenarFecha);
         titulo = findViewById(R.id.rellenarTitulo);
-        tituloT = findViewById(R.id.tituloTarea);
+
         description = findViewById(R.id.rellenarDescripcion);
-        descripcionT = findViewById(R.id.descripcionTarea);
+
         submit = findViewById(R.id.submit);
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +62,7 @@ public class CreationActivity extends AppCompatActivity {
 
                 try {
                     if(fecha.getText() == null){
-                        data = dateFormat.parse("10/10/2000");
+                        data = dateFormat.parse("01/01/2001");
                     }else{
                         data = dateFormat.parse(fecha.getText().toString());
                     }

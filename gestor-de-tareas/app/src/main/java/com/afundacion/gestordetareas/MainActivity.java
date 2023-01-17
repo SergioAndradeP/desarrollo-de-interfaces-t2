@@ -24,6 +24,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -64,17 +65,19 @@ public class MainActivity extends AppCompatActivity {
                         new Response.Listener<JSONArray>(){
                             @Override
                             public void onResponse(JSONArray response) {
-                                Toast.makeText(context, "Server OK", Toast.LENGTH_LONG).show();
+
                                 for (int i=0;i<response.length();i++){
                                     try {
                                         JSONObject task= response.getJSONObject(i);
                                         TaskData aTask= new TaskData(task);
+
                                         listaTasks.add(aTask);
 
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
                                 }
+                                T
                                 //Creamos el adaptador y se lo pasamos al reciclerView
                                 TaskRecyclerViewAdapter adapter= new TaskRecyclerViewAdapter(listaTasks,activity);
                                 recyclerView.setAdapter(adapter);
@@ -112,5 +115,20 @@ public class MainActivity extends AppCompatActivity {
         View inflatedView = inflater.inflate(R.layout.loading, null);
 
         return inflatedView;
+    }
+    private boolean DateIsFuture(String date){
+        Calendar c1 = Calendar.getInstance();
+        int pYear = c1.get(Calendar.YEAR);
+        int pMonth = c1.get(Calendar.MONTH)+1;
+        int pDay= c1.get(Calendar.DAY_OF_MONTH);
+        String[] dateSplitted= date.split("/",3);
+        if(Integer.parseInt(dateSplitted[2]) > pYear){
+            return true;
+        } else if (Integer.parseInt(dateSplitted[2])==pYear && Integer.parseInt(dateSplitted[1])>pMonth){
+            return true
+        } else if(Integer.parseInt(dateSplitted[1])==pMonth && Integer.parseInt(dateSplitted[0])>=pDay){
+            return true
+        }
+        return false;
     }
 }

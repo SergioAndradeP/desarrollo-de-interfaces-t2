@@ -57,9 +57,9 @@ public class TaskViewHolder extends RecyclerView.ViewHolder {
 
         //Se muestran los datos y se coloca el listenner en la vista. Al pulsar imagen o descripción
         //se creará el Intent
-        title.setText((data.getTitle()));
-        date.setText(data.getDate());
-        description.setText(data.getDescription());
+        title.setText("Task: "+(data.getTitle()));
+        date.setText("Deadline: "+data.getDate());
+        description.setText("Description: "+data.getDescription());
 
         vista.setOnClickListener(new View.OnClickListener() {
             @Override

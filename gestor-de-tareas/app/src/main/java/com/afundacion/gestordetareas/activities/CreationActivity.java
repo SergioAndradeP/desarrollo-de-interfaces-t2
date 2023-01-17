@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.afundacion.gestordetareas.R;
 import com.afundacion.gestordetareas.utils.MenuActivity;
+import com.afundacion.gestordetareas.utils.RestClient;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -28,8 +29,7 @@ public class CreationActivity extends MenuActivity {
     private EditText fecha;
     private EditText description;
     private TextView fechaT;
-    TextView tituloT;
-    TextView descripcionT;
+    private RestClient client;
     private Button submit;
     private Context context = this;
     private Date data;
@@ -38,6 +38,8 @@ public class CreationActivity extends MenuActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_creation);
+
+        client = RestClient.getInstance(context);
 
         //Vinculamos los objetos del spinner al spinner desplegable
         spinner = (Spinner) findViewById(R.id.tareas_spinner);
@@ -71,10 +73,10 @@ public class CreationActivity extends MenuActivity {
                     e.printStackTrace();
                 }
                 calendar.setTime(data);
+                // Lanzamos el metodo con la peticion
+                client.submitTarea(titulo.getText().toString(), description.getText().toString(), fecha.getText().toString(), spinner.getSelectedItem().toString());
 
 
-
-                Toast.makeText(context,"Pulsado",Toast.LENGTH_LONG).show();
             }
         });
 

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     private List<TaskData> allthedata;
     private Activity activity;
 
-    public TaskRecyclerViewAdapter(List<TaskData> dataset, Activity activity){
+    public TaskRecyclerViewAdapter(List<TaskData> dataset, Fragment fragment){
         this.allthedata= dataset;
         this.activity= activity;
     }

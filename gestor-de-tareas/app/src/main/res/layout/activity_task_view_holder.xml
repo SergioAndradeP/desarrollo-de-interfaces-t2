@@ -14,8 +14,12 @@
         android:layout_height="wrap_content"
         android:text="Tarea: "
         android:background="#F6D55C"
+
         android:textAlignment="center"
-        android:textSize="12sp"
+
+
+        android:textSize="20sp"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
@@ -30,7 +34,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Fecha: "
-        android:textSize="12sp"
+
+        android:textSize="20sp"
+
         android:textAlignment="center"
         android:background="#4CAF50"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,9 +52,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Descripción: "
-        android:textSize="12sp"
+
+
         android:textAlignment="center"
         android:background="#2196F3"
+
+        android:textSize="20sp"
+
+
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/date"

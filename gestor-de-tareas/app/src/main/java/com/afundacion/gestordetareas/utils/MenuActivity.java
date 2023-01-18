@@ -10,7 +10,10 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+
 import com.afundacion.gestordetareas.R;
+import com.afundacion.gestordetareas.activities.fragmentCreatiom;
 import com.google.android.material.navigation.NavigationView;
 
 public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -52,6 +55,8 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                 drawerLayout.close();
                 break;
             case R.id.tasks_manager:
+                Fragment fragmentCreatiom = new fragmentCreatiom();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,new fragmentCreatiom()).commit();
                 drawerLayout.close();
                 break;
             case R.id.statistics:

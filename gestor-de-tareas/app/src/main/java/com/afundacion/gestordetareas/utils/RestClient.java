@@ -1,6 +1,13 @@
 package com.afundacion.gestordetareas.utils;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.afundacion.gestordetareas.MainActivity;
 import com.afundacion.gestordetareas.activities.RegisterActivity;
@@ -82,7 +89,6 @@ public class RestClient {
 
 
     }
-}
     public void loginUser(EditText email, EditText password){
         JSONObject requestBody = new JSONObject();
         try{

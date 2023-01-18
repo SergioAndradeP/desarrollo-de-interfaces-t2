@@ -16,6 +16,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONException;
@@ -23,7 +24,7 @@ import org.json.JSONObject;
 
 public class RestClient {
 
-    private String BASE_URL = "";
+    private String BASE_URL = "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/";
 
     private Context context;
 
@@ -34,6 +35,7 @@ public class RestClient {
 
     private RestClient(Context context){
         this.context = context;
+        queue = Volley.newRequestQueue(context);
     }
 
     public static RestClient getInstance(Context context){
@@ -54,17 +56,18 @@ public class RestClient {
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                BASE_URL + "/login",
+                BASE_URL + "/users",
                 requestBody,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         String receivedToken;
                         try {
-                            receivedToken = response.getString("sessionToken");
+                            receivedToken = response.getString("token");
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
+                        Toast.makeText(context,"Token de sesión: "+receivedToken,Toast.LENGTH_LONG).show();
                         Intent home = new Intent(context, MainActivity.class);
                         context.startActivity(home);
                         SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS_PREFS",MODE_PRIVATE);
@@ -91,7 +94,7 @@ public class RestClient {
         this.queue.add(request);
     }
 
-    public void registerUser(EditText nombre, EditText email, EditText password){
+    public void registerUser(EditText nombre, EditText email, EditText password, Context contexto){
         JSONObject requestBody = new JSONObject();
         try {
             requestBody.put("name", nombre.getText().toString());
@@ -108,7 +111,7 @@ public class RestClient {
                     @Override
                     public void onResponse(JSONObject response) {
                         Toast.makeText(context, "Usuario registrado", Toast.LENGTH_LONG).show();
-                        ((Activity)context).finish();
+                        ((Activity)contexto).finish();
                     }
                 },
                 new Response.ErrorListener() {

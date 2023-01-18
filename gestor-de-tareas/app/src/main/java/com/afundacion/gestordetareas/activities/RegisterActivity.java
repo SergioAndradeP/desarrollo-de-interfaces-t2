@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.afundacion.gestordetareas.R;
+import com.afundacion.gestordetareas.utils.MenuActivity;
 
 public class RegisterActivity extends AppCompatActivity {
     private Button boton;

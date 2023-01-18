@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".utils.MenuActivity"
     android:id="@+id/drawer_layout"
     tools:openDrawer="start">
     <com.google.android.material.navigation.NavigationView
@@ -30,7 +30,7 @@
         </androidx.appcompat.widget.Toolbar>
         <FrameLayout
             android:id="@+id/frameLayout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </FrameLayout>
     </LinearLayout>

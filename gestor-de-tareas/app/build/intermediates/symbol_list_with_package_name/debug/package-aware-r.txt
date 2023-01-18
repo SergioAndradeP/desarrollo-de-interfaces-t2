@@ -2733,12 +2733,15 @@ id beginOnFirstDraw
 id beginning
 id bestChoice
 id blocking
+id boton_login
+id boton_registro
 id bottom
 id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
 id buttonPanel
+id cabecera
 id cache_measures
 id callMeasure
 id cancel_button
@@ -2807,12 +2810,15 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
+id drawer_layout
 id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
 id east
 id edit_query
+id edit_text_contraseña
+id edit_text_email
 id elastic
 id embed
 id end
@@ -2837,6 +2843,7 @@ id flip
 id floating
 id forever
 id fragment_container_view_tag
+id frameLayout
 id frost
 id fullscreen_header
 id ghost_view
@@ -2945,6 +2952,7 @@ id navigation_bar_item_labels_group
 id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
 id navigation_header_container
+id navigator_layout
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
@@ -2983,6 +2991,11 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id registerActivity_boton_submit
+id registerActivity_contraseña
+id registerActivity_email
+id registerActivity_nombre
+id registerActivity_repetirContraseña
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3046,6 +3059,7 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id statistics
 id stop
 id stretch
 id submenuarrow
@@ -3065,6 +3079,8 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id tasks
+id tasks_manager
 id text
 id text2
 id textEnd
@@ -3086,6 +3102,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toolbar_id
 id top
 id topPanel
 id touch_outside
@@ -3244,8 +3261,10 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_login
 layout activity_main
+layout activity_menu
 layout activity_register
 layout activity_task_view_holder
+layout cabecera_drawerlayout
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3322,9 +3341,11 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu navigator_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+string Inicio
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -3461,6 +3482,8 @@ string mtrl_switch_track_decoration_path
 string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
+string navigator_close
+string navigator_open
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through

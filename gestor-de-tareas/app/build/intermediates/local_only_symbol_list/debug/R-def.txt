@@ -10,21 +10,51 @@ color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 id RecyclerView
+id boton_login
+id boton_registro
+id cabecera
 id date
 id description
+id drawer_layout
+id edit_text_contraseña
+id edit_text_email
+id frameLayout
 id holder
+id home
+id navigator_layout
 id progressBar
+id registerActivity_boton_submit
+id registerActivity_contraseña
+id registerActivity_email
+id registerActivity_nombre
+id registerActivity_repetirContraseña
+id statistics
+id tasks
+id tasks_manager
 id title
+id toolbar_id
 layout activity_login
 layout activity_main
+layout activity_menu
 layout activity_register
 layout activity_task_view_holder
+<<<<<<< HEAD
+=======
+layout cabecera_drawerlayout
+>>>>>>> 27c8b6e (Terminado el aspecto visual del MainFragment. Falta el contextMenu y el boton de añadir tarea)
 layout fragment_main
 layout loading
+menu navigator_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
+string Inicio
 string app_name
 string hello_blank_fragment
+<<<<<<< HEAD
+=======
+string navigator_close
+string navigator_open
+>>>>>>> 27c8b6e (Terminado el aspecto visual del MainFragment. Falta el contextMenu y el boton de añadir tarea)
 style Theme.GestorDeTareas
 xml backup_rules
 xml data_extraction_rules

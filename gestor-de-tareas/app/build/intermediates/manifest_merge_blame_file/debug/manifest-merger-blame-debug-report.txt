@@ -15,7 +15,7 @@
 11-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:5:22-64
 12
 13    <application
-13-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:7:5-46:19
+13-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:7:5-43:19
 14        android:allowBackup="true"
 14-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:8:9-35
 15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -50,69 +50,64 @@
 30-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:22:17-33
 31        </activity>
 32        <activity
-32-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:24:9-30:20
-33            android:name="com.afundacion.gestordetareas.MainActivity"
-33-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:25:13-41
-34            android:exported="false" >
-34-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:26:13-37
-35            <meta-data
-35-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:20:13-22:36
-36                android:name="android.app.lib_name"
-36-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:21:17-52
-37                android:value="" />
-37-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:22:17-33
-38        </activity>
-39        <activity
-39-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:31:9-39:20
-40            android:name="com.afundacion.gestordetareas.launcher.LauncherActivity"
-40-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:32:13-54
-41            android:exported="true" >
-41-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:33:13-36
-42            <intent-filter>
-42-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:34:13-38:29
-43                <action android:name="android.intent.action.MAIN" />
-43-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:35:17-69
-43-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:35:25-66
-44
-45                <category android:name="android.intent.category.LAUNCHER" />
-45-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:37:17-77
-45-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:37:27-74
-46            </intent-filter>
-47        </activity>
-48        <activity
-48-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:40:9-42:40
-49            android:name="com.afundacion.gestordetareas.activities.LoginActivity"
-49-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:41:13-53
-50            android:exported="false" />
-50-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:42:13-37
-51        <activity
-51-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:43:9-45:40
-52            android:name="com.afundacion.gestordetareas.activities.RegisterActivity"
-52-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:44:13-56
-53            android:exported="false" />
-53-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:45:13-37
-54
-55        <provider
-55-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Hector\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-56            android:name="androidx.startup.InitializationProvider"
-56-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Hector\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-57            android:authorities="com.afundacion.gestordetareas.androidx-startup"
-57-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Hector\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-58            android:exported="false" >
-58-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Hector\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+32-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:24:9-32:20
+33            android:name="com.afundacion.gestordetareas.launcher.LauncherActivity"
+33-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:25:13-54
+34            android:exported="true" >
+34-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:26:13-36
+35            <intent-filter>
+35-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:27:13-31:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:28:17-69
+36-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:28:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:30:17-77
+38-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:30:27-74
+39            </intent-filter>
+40        </activity>
+41        <activity
+41-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:33:9-35:40
+42            android:name="com.afundacion.gestordetareas.activities.LoginActivity"
+42-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:34:13-53
+43            android:exported="false" />
+43-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:35:13-37
+44        <activity
+44-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:36:9-38:40
+45            android:name="com.afundacion.gestordetareas.activities.RegisterActivity"
+45-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:37:13-56
+46            android:exported="false" />
+46-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:38:13-37
+47        <activity
+47-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:39:9-42:40
+48            android:name="com.afundacion.gestordetareas.utils.MenuActivity"
+48-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:40:13-47
+49            android:exported="false"
+49-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:42:13-37
+50            android:theme="@style/Theme.AppCompat.NoActionBar" />
+50-->C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:41:13-63
+51
+52        <provider
+52-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Hector\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+53            android:name="androidx.startup.InitializationProvider"
+53-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Hector\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+54            android:authorities="com.afundacion.gestordetareas.androidx-startup"
+54-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Hector\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+55            android:exported="false" >
+55-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Hector\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+56            <meta-data
+56-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Hector\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+57                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+57-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Hector\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+58                android:value="androidx.startup" />
+58-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Hector\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
 59            <meta-data
-59-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Hector\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-60                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Hector\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+59-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Hector\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+60                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+60-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Hector\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
 61                android:value="androidx.startup" />
-61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Hector\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-62            <meta-data
-62-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Hector\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-63                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-63-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Hector\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-64                android:value="androidx.startup" />
-64-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Hector\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-65        </provider>
-66    </application>
-67
-68</manifest>
+61-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Hector\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+62        </provider>
+63    </application>
+64
+65</manifest>

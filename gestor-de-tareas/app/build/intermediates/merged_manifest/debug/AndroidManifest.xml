@@ -30,13 +30,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.afundacion.gestordetareas.MainActivity"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name="com.afundacion.gestordetareas.launcher.LauncherActivity"
             android:exported="true" >
             <intent-filter>
@@ -51,6 +44,10 @@
         <activity
             android:name="com.afundacion.gestordetareas.activities.RegisterActivity"
             android:exported="false" />
+        <activity
+            android:name="com.afundacion.gestordetareas.utils.MenuActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

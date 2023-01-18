@@ -1,9 +1,20 @@
+<<<<<<< HEAD
 #Wed Jan 18 10:34:27 CET 2023
 path.4=14/classes.dex
 path.3=13/classes.dex
 path.2=12/classes.dex
 path.1=0/classes.dex
 path.5=5/classes.dex
+=======
+#Wed Jan 18 10:07:52 CET 2023
+path.4=5/classes.dex
+path.3=14/classes.dex
+path.2=13/classes.dex
+path.1=0/classes.dex
+path.7=4/classes.dex
+path.6=1/classes.dex
+path.5=12/classes.dex
+>>>>>>> 27c8b6e (Terminado el aspecto visual del MainFragment. Falta el contextMenu y el boton de añadir tarea)
 path.0=classes.dex
 base.4=C\:\\msys64\\home\\Hector\\desarrollo-de-interfaces-t2\\gestor-de-tareas\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
 base.3=C\:\\msys64\\home\\Hector\\desarrollo-de-interfaces-t2\\gestor-de-tareas\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
@@ -14,6 +25,16 @@ renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
+<<<<<<< HEAD
 renamed.5=classes6.dex
 renamed.4=classes5.dex
 base.5=C\:\\msys64\\home\\Hector\\desarrollo-de-interfaces-t2\\gestor-de-tareas\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
+=======
+renamed.7=classes8.dex
+renamed.6=classes7.dex
+base.7=C\:\\msys64\\home\\Hector\\desarrollo-de-interfaces-t2\\gestor-de-tareas\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
+renamed.5=classes6.dex
+base.6=C\:\\msys64\\home\\Hector\\desarrollo-de-interfaces-t2\\gestor-de-tareas\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+renamed.4=classes5.dex
+base.5=C\:\\msys64\\home\\Hector\\desarrollo-de-interfaces-t2\\gestor-de-tareas\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
+>>>>>>> 27c8b6e (Terminado el aspecto visual del MainFragment. Falta el contextMenu y el boton de añadir tarea)

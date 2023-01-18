@@ -11,24 +11,27 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.afundacion.gestordetareas.R;
+import com.afundacion.gestordetareas.utils.RestClient;
 
 public class LoginActivity extends AppCompatActivity {
-    private EditText username, password;
+    private EditText email, password;
     private Button botonLogin, botonRegistro;
     private Context context = this;
+    private RestClient client;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        username = findViewById(R.id.edit_text_usuario);
+        email = findViewById(R.id.edit_text_email);
         password = findViewById(R.id.edit_text_contraseña);
         botonLogin = findViewById(R.id.boton_login);
         botonRegistro = findViewById(R.id.boton_registro);
+        client = RestClient.getInstance(context);
 
         botonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                client.loginUser(email, password);
             }
         });
 

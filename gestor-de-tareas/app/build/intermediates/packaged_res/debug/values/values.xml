@@ -10,11 +10,8 @@
     <string name="Inicio">Inicio</string>
     <string name="app_name">Gestor de tareas</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-<<<<<<< HEAD
-=======
     <string name="navigator_close">Close nav</string>
     <string name="navigator_open">Open nav</string>
->>>>>>> 27c8b6e (Terminado el aspecto visual del MainFragment. Falta el contextMenu y el boton de añadir tarea)
     <style name="Theme.GestorDeTareas" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>

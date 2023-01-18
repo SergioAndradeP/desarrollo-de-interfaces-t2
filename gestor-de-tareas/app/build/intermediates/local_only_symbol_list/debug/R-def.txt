@@ -38,10 +38,7 @@ layout activity_main
 layout activity_menu
 layout activity_register
 layout activity_task_view_holder
-<<<<<<< HEAD
-=======
 layout cabecera_drawerlayout
->>>>>>> 27c8b6e (Terminado el aspecto visual del MainFragment. Falta el contextMenu y el boton de añadir tarea)
 layout fragment_main
 layout loading
 menu navigator_menu
@@ -50,11 +47,8 @@ mipmap ic_launcher_round
 string Inicio
 string app_name
 string hello_blank_fragment
-<<<<<<< HEAD
-=======
 string navigator_close
 string navigator_open
->>>>>>> 27c8b6e (Terminado el aspecto visual del MainFragment. Falta el contextMenu y el boton de añadir tarea)
 style Theme.GestorDeTareas
 xml backup_rules
 xml data_extraction_rules

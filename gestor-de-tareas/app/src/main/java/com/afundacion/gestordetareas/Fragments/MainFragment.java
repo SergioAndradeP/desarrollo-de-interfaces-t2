@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -180,4 +181,20 @@ public class MainFragment extends Fragment {
         return inflatedView;
     }
 
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        Context context= getContext();
+         super.onContextItemSelected(item);
+         switch (item.getItemId()){
+             case 101:
+                 Toast.makeText(context,"delete", Toast.LENGTH_LONG).show();
+                 return true;
+             case 102:
+                 Toast.makeText(context,"marcar como finalizada", Toast.LENGTH_LONG).show();
+                 return true;
+             default:
+                 return super.onContextItemSelected(item);
+
+         }
+    }
 }

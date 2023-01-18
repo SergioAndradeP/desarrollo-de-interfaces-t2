@@ -6,8 +6,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewStub;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,7 +36,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 
-public class TaskViewHolder extends RecyclerView.ViewHolder {
+public class TaskViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
     private TextView title,date,description;
 
     private Context context;
@@ -81,6 +83,10 @@ public class TaskViewHolder extends RecyclerView.ViewHolder {
     }
 
 
-
+    @Override
+    public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+        contextMenu.add(getAdapterPosition(),101,0,"Borrar");
+        contextMenu.add(getAdapterPosition(),102,1,"Marcar como completada");
+    }
 }
 

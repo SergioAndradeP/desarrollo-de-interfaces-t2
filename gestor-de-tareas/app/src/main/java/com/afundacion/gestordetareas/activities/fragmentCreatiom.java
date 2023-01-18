@@ -2,16 +2,18 @@ package com.afundacion.gestordetareas.activities;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.afundacion.gestordetareas.R;
 import com.afundacion.gestordetareas.utils.MenuActivity;
@@ -23,7 +25,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class CreationActivity extends MenuActivity {
+public class fragmentCreatiom extends Fragment {
+
+    public fragmentCreatiom(){}
     private Spinner spinner;
     private EditText titulo;
     private EditText fecha;
@@ -31,29 +35,30 @@ public class CreationActivity extends MenuActivity {
     private TextView fechaT;
     private RestClient client;
     private Button submit;
-    private Context context = this;
     private Date data;
+    private Context context;
+    @Nullable
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_creation);
-
+        View view = inflater.inflate(R.layout.activity_creation, container, false);
+        context = getContext();
         client = RestClient.getInstance(context);
 
         //Vinculamos los objetos del spinner al spinner desplegable
-        spinner = (Spinner) findViewById(R.id.tareas_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+        spinner = (Spinner) view.findViewById(R.id.tareas_spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(context,
                 R.array.tareas_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        fecha = findViewById(R.id.rellenarFecha);
-        titulo = findViewById(R.id.rellenarTitulo);
+        fecha = view.findViewById(R.id.rellenarFecha);
+        titulo = view.findViewById(R.id.rellenarTitulo);
 
-        description = findViewById(R.id.rellenarDescripcion);
+        description = view.findViewById(R.id.rellenarDescripcion);
 
-        submit = findViewById(R.id.submit);
+        submit = view.findViewById(R.id.submit);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +84,7 @@ public class CreationActivity extends MenuActivity {
 
             }
         });
-
+        return view;
 
     }
 }

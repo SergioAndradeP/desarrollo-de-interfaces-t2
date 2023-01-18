@@ -40,7 +40,7 @@
             android:name=".utils.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.CreationActivity"
+            android:name=".activities.fragmentCreatiom"
             android:exported="false" />
     </application>
 

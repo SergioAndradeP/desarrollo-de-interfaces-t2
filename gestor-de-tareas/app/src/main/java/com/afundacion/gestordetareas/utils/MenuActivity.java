@@ -10,6 +10,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+
 import com.afundacion.gestordetareas.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -52,6 +54,8 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                 drawerLayout.close();
                 break;
             case R.id.tasks_manager:
+                Fragment fragmentCreatiom = new Fragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragmentCreatiom).commit();
                 drawerLayout.close();
                 break;
             case R.id.statistics:

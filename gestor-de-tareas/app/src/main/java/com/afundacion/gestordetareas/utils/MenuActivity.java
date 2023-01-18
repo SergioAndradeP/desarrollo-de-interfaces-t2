@@ -55,7 +55,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.tasks_manager:
                 Fragment fragmentCreatiom = new Fragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragmentCreatiom).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,new fragmentCreatiom()).commit();
                 drawerLayout.close();
                 break;
             case R.id.statistics:

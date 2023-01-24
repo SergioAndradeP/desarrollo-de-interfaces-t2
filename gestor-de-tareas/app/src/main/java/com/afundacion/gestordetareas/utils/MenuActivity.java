@@ -9,12 +9,20 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+<<<<<<< HEAD
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.afundacion.gestordetareas.Fragments.MainFragment;
 import com.afundacion.gestordetareas.R;
+=======
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+
+import com.afundacion.gestordetareas.R;
+import com.afundacion.gestordetareas.activities.fragmentCreatiom;
+>>>>>>> main
 import com.google.android.material.navigation.NavigationView;
 
 public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -48,6 +56,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+<<<<<<< HEAD
 
         switch(item.getItemId()){
             case R.id.home:
@@ -60,12 +69,21 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                         .commit();
 
 
+=======
+        switch(item.getItemId()){
+            case R.id.home:
+>>>>>>> main
                 drawerLayout.close();
                 break;
             case R.id.tasks:
                 drawerLayout.close();
                 break;
             case R.id.tasks_manager:
+<<<<<<< HEAD
+=======
+                Fragment fragmentCreatiom = new fragmentCreatiom();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,new fragmentCreatiom()).commit();
+>>>>>>> main
                 drawerLayout.close();
                 break;
             case R.id.statistics:

@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.afundacion.gestordetareas.R;
+import com.afundacion.gestordetareas.RestClient.RestClient;
 import com.afundacion.gestordetareas.TaskData;
 import com.afundacion.gestordetareas.TaskRecyclerViewAdapter;
 import com.afundacion.gestordetareas.TaskViewHolder;
@@ -60,6 +61,7 @@ public class MainFragment extends Fragment {
     private AlertDialog.Builder myBuilder;
     private AlertDialog myDialog;
     Fragment fragment=this;
+    private RestClient client;
 
     public MainFragment() {
         // Required empty public constructor
@@ -186,7 +188,7 @@ public class MainFragment extends Fragment {
                  Toast.makeText(context,Integer.toString(item.getGroupId()), Toast.LENGTH_LONG).show();
                  adapter.deleteTask(item.getGroupId());
                  recyclerView.removeViewAt(item.getGroupId());
-
+                 client.deleteTaskRequest(2);
                  return true;
              case 102:
                  Toast.makeText(context,"marcar como finalizada", Toast.LENGTH_LONG).show();

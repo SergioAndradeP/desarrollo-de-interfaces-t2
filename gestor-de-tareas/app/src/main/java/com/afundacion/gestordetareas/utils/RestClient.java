@@ -9,12 +9,21 @@ import android.content.SharedPreferences;
 import android.widget.EditText;
 import android.widget.Toast;
 
+<<<<<<< HEAD
 import com.afundacion.gestordetareas.Fragments.MainFragment;
+=======
+import com.afundacion.gestordetareas.MainActivity;
+import com.afundacion.gestordetareas.activities.RegisterActivity;
+>>>>>>> main
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+<<<<<<< HEAD
+=======
+import com.google.android.material.textfield.TextInputEditText;
+>>>>>>> main
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -41,6 +50,55 @@ public class RestClient {
         return singleton;
     }
 
+<<<<<<< HEAD
+=======
+
+    // Métodos que lanzan peticiones
+
+    public void submitTarea(String titulo, String descripcion, String fecha, String tipo){
+        JSONObject tarea = new JSONObject();
+
+        try{
+            tarea.put("title",titulo);
+            tarea.put("description",descripcion);
+            tarea.put("date",fecha);
+            tarea.put("type",tipo);
+
+        }catch (JSONException e){
+            throw new RuntimeException(e);
+
+        }
+        JsonObjectRequestWithAuthentication request = new JsonObjectRequestWithAuthentication(
+                Request.Method.POST,
+                "url",
+                tarea,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                    
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }, context
+
+
+
+        );
+
+        this.queue.add(request);
+
+
+
+
+
+
+
+    }
+>>>>>>> main
     public void loginUser(EditText email, EditText password){
         JSONObject requestBody = new JSONObject();
         try{
@@ -63,7 +121,11 @@ public class RestClient {
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
+<<<<<<< HEAD
                         Intent home = new Intent(context, MainFragment.class);
+=======
+                        Intent home = new Intent(context, MainActivity.class);
+>>>>>>> main
                         context.startActivity(home);
                         SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS_PREFS",MODE_PRIVATE);
                         SharedPreferences.Editor editor = preferences.edit();

@@ -11,12 +11,15 @@ import androidx.fragment.app.Fragment;
 
 public class fragmentCharts extends Fragment {
 
-    fragmentCharts(){}
+    fragmentCharts() {
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-
+        return null;
+    }
 }

@@ -8,16 +8,20 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.afundacion.gestordetareas.Fragments.MainFragment;
 
-import com.afundacion.gestordetareas.MainActivity;
 import com.afundacion.gestordetareas.activities.RegisterActivity;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+
 import com.android.volley.toolbox.Volley;
+
 import com.google.android.material.textfield.TextInputEditText;
+
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,6 +48,7 @@ public class RestClient {
         }
         return singleton;
     }
+
 
 
     // Métodos que lanzan peticiones
@@ -91,6 +96,7 @@ public class RestClient {
 
 
     }
+
     public void loginUser(EditText email, EditText password){
         JSONObject requestBody = new JSONObject();
         try{
@@ -113,8 +119,9 @@ public class RestClient {
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
+
                         Toast.makeText(context,"Token de sesión: "+receivedToken,Toast.LENGTH_LONG).show();
-                        Intent home = new Intent(context, MainActivity.class);
+                        Intent home = new Intent(context, MainFragment.class);
                         context.startActivity(home);
                         SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS_PREFS",MODE_PRIVATE);
                         SharedPreferences.Editor editor = preferences.edit();

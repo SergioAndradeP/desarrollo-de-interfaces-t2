@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,6 +23,7 @@ import com.afundacion.gestordetareas.RestClient.RestClient;
 import com.afundacion.gestordetareas.TaskData;
 import com.afundacion.gestordetareas.TaskRecyclerViewAdapter;
 import com.afundacion.gestordetareas.TaskViewHolder;
+import com.afundacion.gestordetareas.activities.fragmentCreatiom;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -111,9 +113,14 @@ public class MainFragment extends Fragment {
         List<TaskData> listaTasks= new ArrayList<>();
 
         FloatingActionButton fab = view.findViewById(R.id.fab);
+        Fragment fragment = MainFragment.newInstance("Inicio");
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FragmentTransaction fr= getFragmentManager().beginTransaction();
+                fr.replace(R.id.frameLayout,new fragmentCreatiom());
+                fr.commit();
 
             }
         });

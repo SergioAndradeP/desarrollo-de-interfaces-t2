@@ -48,6 +48,9 @@
             android:name="com.afundacion.gestordetareas.utils.MenuActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.afundacion.gestordetareas.activities.fragmentCreatiom"
+            android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

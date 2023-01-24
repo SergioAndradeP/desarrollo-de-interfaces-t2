@@ -40,12 +40,11 @@
             android:name=".utils.MenuActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="false" />
-<<<<<<< HEAD
-=======
+
         <activity
             android:name=".activities.fragmentCreatiom"
             android:exported="false" />
->>>>>>> main
+
     </application>
 
 </manifest>

@@ -28,6 +28,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -107,6 +109,14 @@ public class MainFragment extends Fragment {
 
         this.queue = Volley.newRequestQueue(context);
         List<TaskData> listaTasks= new ArrayList<>();
+
+        FloatingActionButton fab = view.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         //Creamos un diálogo con el spinner y lo lanzamos
         myBuilder = new AlertDialog.Builder(context);
         myBuilder.setView(inflateDialogView());

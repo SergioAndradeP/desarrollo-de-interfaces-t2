@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+array tareas_array
 color black
 color purple_200
 color purple_500
@@ -14,13 +15,17 @@ id boton_login
 id boton_registro
 id cabecera
 id date
+id descripcionTarea
 id description
 id drawer_layout
 id edit_text_contraseña
 id edit_text_email
+id fab
+id fechaTarea
 id frameLayout
 id holder
 id home
+id main
 id navigator_layout
 id progressBar
 id registerActivity_boton_submit
@@ -28,11 +33,19 @@ id registerActivity_contraseña
 id registerActivity_email
 id registerActivity_nombre
 id registerActivity_repetirContraseña
+id rellenarDescripcion
+id rellenarFecha
+id rellenarTitulo
 id statistics
+id submit
+id tareas_spinner
 id tasks
 id tasks_manager
+id tipoTarea
 id title
+id tituloTarea
 id toolbar_id
+layout activity_creation
 layout activity_login
 layout activity_main
 layout activity_menu

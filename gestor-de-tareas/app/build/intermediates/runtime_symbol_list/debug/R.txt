@@ -65,6 +65,7 @@ int animator mtrl_fab_hide_motion_spec 0x7f02001b
 int animator mtrl_fab_show_motion_spec 0x7f02001c
 int animator mtrl_fab_transformation_sheet_collapse_spec 0x7f02001d
 int animator mtrl_fab_transformation_sheet_expand_spec 0x7f02001e
+int array tareas_array 0x7f140000
 int attr SharedValue 0x7f030000
 int attr SharedValueId 0x7f030001
 int attr actionBarDivider 0x7f030002
@@ -2787,6 +2788,7 @@ int id decor_content_parent 0x7f080091
 int id default_activity_button 0x7f080092
 int id deltaRelative 0x7f080093
 int id dependency_ordering 0x7f080094
+int id descripcionTarea 0x7f0801f2
 int id description 0x7f080095
 int id design_bottom_sheet 0x7f080096
 int id design_menu_item_action_area 0x7f080097
@@ -2827,7 +2829,9 @@ int id enterAlwaysCollapsed 0x7f0800b9
 int id exitUntilCollapsed 0x7f0800ba
 int id expand_activities_button 0x7f0800bb
 int id expanded_menu 0x7f0800bc
+int id fab 0x7f0801fc
 int id fade 0x7f0800bd
+int id fechaTarea 0x7f0801f3
 int id fill 0x7f0800be
 int id fill_horizontal 0x7f0800bf
 int id fill_vertical 0x7f0800c0
@@ -2887,6 +2891,7 @@ int id line3 0x7f0800f5
 int id linear 0x7f0800f6
 int id listMode 0x7f0800f7
 int id list_item 0x7f0800f8
+int id main 0x7f0801f4
 int id marquee 0x7f0800f9
 int id masked 0x7f0800fa
 int id match_constraint 0x7f0800fb
@@ -2995,6 +3000,9 @@ int id registerActivity_contraseña 0x7f080161
 int id registerActivity_email 0x7f080162
 int id registerActivity_nombre 0x7f080163
 int id registerActivity_repetirContraseña 0x7f080164
+int id rellenarDescripcion 0x7f0801f5
+int id rellenarFecha 0x7f0801f6
+int id rellenarTitulo 0x7f0801f7
 int id reverseSawtooth 0x7f080165
 int id right 0x7f080166
 int id rightToLeft 0x7f080167
@@ -3062,6 +3070,7 @@ int id statistics 0x7f0801a4
 int id stop 0x7f0801a5
 int id stretch 0x7f0801a6
 int id submenuarrow 0x7f0801a7
+int id submit 0x7f0801f8
 int id submit_area 0x7f0801a8
 int id supportScrollUp 0x7f0801a9
 int id tabMode 0x7f0801aa
@@ -3078,6 +3087,7 @@ int id tag_transition_group 0x7f0801b4
 int id tag_unhandled_key_event_manager 0x7f0801b5
 int id tag_unhandled_key_listeners 0x7f0801b6
 int id tag_window_insets_animation_callback 0x7f0801b7
+int id tareas_spinner 0x7f0801f9
 int id tasks 0x7f0801b8
 int id tasks_manager 0x7f0801b9
 int id text 0x7f0801ba
@@ -3097,9 +3107,11 @@ int id textinput_placeholder 0x7f0801c7
 int id textinput_prefix_text 0x7f0801c8
 int id textinput_suffix_text 0x7f0801c9
 int id time 0x7f0801ca
+int id tipoTarea 0x7f0801fa
 int id title 0x7f0801cb
 int id titleDividerNoCustom 0x7f0801cc
 int id title_template 0x7f0801cd
+int id tituloTarea 0x7f0801fb
 int id toggle 0x7f0801ce
 int id toolbar_id 0x7f0801cf
 int id top 0x7f0801d0
@@ -3258,6 +3270,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0b0018
 int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
+int layout activity_creation 0x7f0b006e
 int layout activity_login 0x7f0b001c
 int layout activity_main 0x7f0b001d
 int layout activity_menu 0x7f0b001e

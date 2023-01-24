@@ -55,18 +55,18 @@ public class RestClient {
         }
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.DELETE,
-                "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/2/tasks",task,
+                "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/2/tasks/"+id,task,
 
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Toast.makeText(context, "Progenitor Eliminado", Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "Tarea eliminada", Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, "Progenitor no eliminados", Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "No se pudo eliminar tarea", Toast.LENGTH_LONG).show();
 
                     }
                 });

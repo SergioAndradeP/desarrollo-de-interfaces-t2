@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-45:12
+ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-50:12
 MERGED from [com.android.volley:volley:1.2.1] C:\Users\Hector\.gradle\caches\transforms-3\71af9ddc6e7b4297fcf1143d426ca149\transformed\volley-1.2.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.7.0] C:\Users\Hector\.gradle\caches\transforms-3\d570501ed8422ac3c5d39480119bfc6a\transformed\material-1.7.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Hector\.gradle\caches\transforms-3\28075e3b5fe6386b541742e3f2e4f8fe\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -45,22 +45,22 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Hector\.gradle\c
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Hector\.gradle\caches\transforms-3\e73c86b3573ad4a7ff179a0b22b3e639\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\Hector\.gradle\caches\transforms-3\e49e4dff70250dbb03e409465432a16f\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Hector\.gradle\caches\transforms-3\313ea14ffe4d03080b06e74a9195c166\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-45:12
-INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-50:12
 	package
 		INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml
-		ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-45:12
+		ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-50:12
 		INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml
-		ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-45:12
+		ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-50:12
 		INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml
-		ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-45:12
+		ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:1-50:12
 		INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:2:11-69
@@ -69,7 +69,7 @@ ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\ap
 	android:name
 		ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:7:5-43:19
+ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:7:5-48:19
 MERGED from [com.google.android.material:material:1.7.0] C:\Users\Hector\.gradle\caches\transforms-3\d570501ed8422ac3c5d39480119bfc6a\transformed\material-1.7.0\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.7.0] C:\Users\Hector\.gradle\caches\transforms-3\d570501ed8422ac3c5d39480119bfc6a\transformed\material-1.7.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Hector\.gradle\caches\transforms-3\28075e3b5fe6386b541742e3f2e4f8fe\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -152,6 +152,12 @@ ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\ap
 		ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:41:13-63
 	android:name
 		ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:40:13-47
+activity#com.afundacion.gestordetareas.activities.fragmentCreatiom
+ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:44:9-46:40
+	android:exported
+		ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:46:13-37
+	android:name
+		ADDED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml:45:13-56
 uses-sdk
 INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\msys64\home\Hector\desarrollo-de-interfaces-t2\gestor-de-tareas\app\src\main\AndroidManifest.xml

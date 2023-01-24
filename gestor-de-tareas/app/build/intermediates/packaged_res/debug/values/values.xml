@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="tareas_array">
+        <item>Hogar</item>
+        <item>Ocio</item>
+        <item>Deporte</item>
+        <item>Trabajo</item>
+        <item>Tareas de casa</item>
+    </string-array>
     <color name="black">#FF000000</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

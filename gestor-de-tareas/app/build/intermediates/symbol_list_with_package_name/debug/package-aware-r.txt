@@ -66,6 +66,7 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array tareas_array
 attr SharedValue
 attr SharedValueId
 attr actionBarDivider
@@ -2788,6 +2789,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id descripcionTarea
 id description
 id design_bottom_sheet
 id design_menu_item_action_area
@@ -2828,7 +2830,9 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab
 id fade
+id fechaTarea
 id fill
 id fill_horizontal
 id fill_vertical
@@ -2888,6 +2892,7 @@ id line3
 id linear
 id listMode
 id list_item
+id main
 id marquee
 id masked
 id match_constraint
@@ -2996,6 +3001,9 @@ id registerActivity_contraseña
 id registerActivity_email
 id registerActivity_nombre
 id registerActivity_repetirContraseña
+id rellenarDescripcion
+id rellenarFecha
+id rellenarTitulo
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3063,6 +3071,7 @@ id statistics
 id stop
 id stretch
 id submenuarrow
+id submit
 id submit_area
 id supportScrollUp
 id tabMode
@@ -3079,6 +3088,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id tareas_spinner
 id tasks
 id tasks_manager
 id text
@@ -3098,9 +3108,11 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id tipoTarea
 id title
 id titleDividerNoCustom
 id title_template
+id tituloTarea
 id toggle
 id toolbar_id
 id top
@@ -3259,6 +3271,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_creation
 layout activity_login
 layout activity_main
 layout activity_menu

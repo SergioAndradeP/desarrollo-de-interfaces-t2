@@ -23,7 +23,7 @@ import org.json.JSONObject;
 
 public class RestClient {
 
-    private String URL = "";
+    private String URL = "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/";
 
     private Context context;
 
@@ -55,15 +55,15 @@ public class RestClient {
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                URL + "/login",
+                URL + "/users",
                 requestBody,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         String receivedToken, userNif;
                         try {
-                            receivedToken = response.getString("user_session_token");
-                            userNif = response.getString("user_nif");
+                            receivedToken = response.getString("token");
+                            System.out.println(receivedToken);
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
@@ -106,7 +106,7 @@ public class RestClient {
         }
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                URL + "/usuarios",
+                URL + "/users",
                 requestBody,
                 new Response.Listener<JSONObject>() {
                     @Override

@@ -52,6 +52,7 @@ public class MainFragment extends Fragment {
     private String mParam2;
 
     private TaskViewHolder viewHolder;
+    private TaskRecyclerViewAdapter adapter;
     private RequestQueue queue;
     private List<TaskData> taskList;
     private RecyclerView recyclerView;
@@ -101,6 +102,7 @@ public class MainFragment extends Fragment {
         //En el activity_main.xml solo tenemos el RecycerViewer. Aquí le asignamos al objeto
         //recyclerview el recyclerviewer del xml
         this.recyclerView = view.findViewById(R.id.RecyclerView);
+
         this.queue = Volley.newRequestQueue(context);
         List<TaskData> listaTasks= new ArrayList<>();
         //Creamos un diálogo con el spinner y lo lanzamos
@@ -112,15 +114,7 @@ public class MainFragment extends Fragment {
         Runnable loadJson= new Runnable() {
             @Override
             public void run() {
-
-
                 request= new JsonArrayRequest(Request.Method.GET,
-
-
-
-
-
-
                         "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/2/tasks",
 
                         null,
@@ -168,6 +162,8 @@ public class MainFragment extends Fragment {
         Thread carga= new Thread(loadJson);
         carga.start();
         //Se inicia e hilo dentro de Oncreate
+        adapter= new TaskRecyclerViewAdapter(listaTasks,this);
+        recyclerView.setAdapter(adapter);
 
         return view;
 
@@ -187,7 +183,10 @@ public class MainFragment extends Fragment {
          super.onContextItemSelected(item);
          switch (item.getItemId()){
              case 101:
-                 Toast.makeText(context,"delete", Toast.LENGTH_LONG).show();
+                 Toast.makeText(context,Integer.toString(item.getGroupId()), Toast.LENGTH_LONG).show();
+                 adapter.deleteTask(item.getGroupId());
+                 recyclerView.removeViewAt(item.getGroupId());
+
                  return true;
              case 102:
                  Toast.makeText(context,"marcar como finalizada", Toast.LENGTH_LONG).show();
@@ -197,4 +196,6 @@ public class MainFragment extends Fragment {
 
          }
     }
+
+
 }

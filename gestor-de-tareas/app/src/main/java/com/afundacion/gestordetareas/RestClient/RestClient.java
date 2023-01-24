@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -40,4 +41,35 @@ public class RestClient {
     }
 
     // Métodos que lanzan peticiones
+
+    public void deleteTaskRequest(int id){
+
+        JSONObject task = null;
+        try {
+            task.put("id", id);
+        } catch (JSONException e) {
+            throw new RuntimeException();
+        }
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.DELETE,
+                "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/2/tasks",task,
+
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Toast.makeText(context, "Progenitor Eliminado", Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(context, "Progenitor no eliminados", Toast.LENGTH_LONG).show();
+
+                    }
+                });
+
+
+
+
+    }
 }

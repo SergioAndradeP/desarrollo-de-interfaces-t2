@@ -9,11 +9,15 @@ public class TaskData {
    private String title;
    private String date;
    private String description;
+   private int id;
 
-    public TaskData(String title, String date, String description) {
+    public TaskData(int id, String title, String date, String description) {
         this.title = title;
         this.date = date;
         this.description = description;
+    }
+    public int getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -44,6 +48,7 @@ public class TaskData {
         this.title = json.getString("name");
         this.description= json.getString("description");
         this.date= json.getString("deadline");
+        this.id= json.getInt("id");
 
     }
 

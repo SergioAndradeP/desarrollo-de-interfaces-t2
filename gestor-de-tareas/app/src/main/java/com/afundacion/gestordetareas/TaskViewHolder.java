@@ -51,6 +51,7 @@ public class TaskViewHolder extends RecyclerView.ViewHolder implements View.OnCr
         date= (TextView) itemView.findViewById(R.id.date);
         title= (TextView) itemView.findViewById(R.id.title);
         vista = (View) itemView.findViewById(R.id.holder);
+        itemView.setOnCreateContextMenuListener(this);
         //La vista es holder, el constraintlayout de logo_view_holder.xml
 
     }
@@ -88,5 +89,6 @@ public class TaskViewHolder extends RecyclerView.ViewHolder implements View.OnCr
         contextMenu.add(getAdapterPosition(),101,0,"Borrar");
         contextMenu.add(getAdapterPosition(),102,1,"Marcar como completada");
     }
+
 }
 

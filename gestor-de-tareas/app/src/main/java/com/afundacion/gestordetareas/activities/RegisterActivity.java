@@ -36,7 +36,6 @@ public class RegisterActivity extends AppCompatActivity {
                 if (password.getText().toString().equals(repeatPassword.getText().toString())){
                     client.registerUser(name, email, password, context);
                 }
-
             }
         });
     }

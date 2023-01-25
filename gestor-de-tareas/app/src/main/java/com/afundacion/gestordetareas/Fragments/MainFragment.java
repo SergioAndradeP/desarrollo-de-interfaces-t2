@@ -111,19 +111,18 @@ public class MainFragment extends Fragment {
 
         this.queue = Volley.newRequestQueue(context);
         List<TaskData> listaTasks= new ArrayList<>();
-
-        FloatingActionButton fab = view.findViewById(R.id.fab);
+        //Creaamos el floating button y lo asociamos con el fragmento de añadir tarea
         Fragment fragment = MainFragment.newInstance("Inicio");
-
+        FloatingActionButton fab = view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fr= getFragmentManager().beginTransaction();
                 fr.replace(R.id.frameLayout,new fragmentCreatiom());
                 fr.commit();
-
             }
         });
+
         //Creamos un diálogo con el spinner y lo lanzamos
         myBuilder = new AlertDialog.Builder(context);
         myBuilder.setView(inflateDialogView());
@@ -199,16 +198,19 @@ public class MainFragment extends Fragment {
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         Context context= getContext();
+        View view= getView();
          super.onContextItemSelected(item);
          switch (item.getItemId()){
              case 101:
                  Toast.makeText(context,Integer.toString(item.getGroupId()), Toast.LENGTH_LONG).show();
                  adapter.deleteTask(item.getGroupId());
                  recyclerView.removeViewAt(item.getGroupId());
-                 client.deleteTaskRequest(2);
+                 //client.deleteTaskRequest(2);
                  return true;
              case 102:
-                 Toast.makeText(context,"marcar como finalizada", Toast.LENGTH_LONG).show();
+                 Toast.makeText(context,"marcada como competada", Toast.LENGTH_LONG).show();
+                 adapter.markAsCompleted(item.getGroupId(),view);
+                 //client.isCompleted(2);
                  return true;
              default:
                  return super.onContextItemSelected(item);

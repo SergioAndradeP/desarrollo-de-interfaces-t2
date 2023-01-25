@@ -1,5 +1,8 @@
 package com.afundacion.gestordetareas;
 
+
+import android.view.View;
+import android.view.LayoutInflater;
 import java.util.Calendar;
 
 public  class Utils {
@@ -19,4 +22,5 @@ public  class Utils {
         }
         return false;
     }
+
 }

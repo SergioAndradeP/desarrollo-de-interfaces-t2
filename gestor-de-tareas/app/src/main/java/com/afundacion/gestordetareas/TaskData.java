@@ -10,8 +10,10 @@ public class TaskData {
    private String date;
    private String description;
    private int id;
+   private String category;
+   private boolean completed;
 
-    public TaskData(int id, String title, String date, String description) {
+    public TaskData(int id, String title, String date, String description, String category, boolean completed) {
         this.title = title;
         this.date = date;
         this.description = description;
@@ -32,6 +34,12 @@ public class TaskData {
         return date;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public boolean getCompleted() {return completed;}
+
     public void setDate(String date) {
         this.date = date;
     }
@@ -49,6 +57,8 @@ public class TaskData {
         this.description= json.getString("description");
         this.date= json.getString("deadline");
         this.id= json.getInt("id");
+        this.category= json.getString("category");
+        this.completed= json.getBoolean("completed");
 
     }
 

@@ -2,6 +2,7 @@ R_DEF: Internal format may change without notice
 local
 array tareas_array
 color black
+color green
 color purple_200
 color purple_500
 color purple_700
@@ -12,8 +13,10 @@ drawable ic_baseline_add_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 id RecyclerView
+id RecyclerView2
 id boton_login
 id cabecera
+id category
 id date
 id descripcionTarea
 id description
@@ -24,6 +27,7 @@ id fab
 id fechaTarea
 id frameLayout
 id holder
+id holder2
 id home
 id main
 id navigator_layout
@@ -55,7 +59,9 @@ layout activity_task_view_holder
 layout cabecera_drawerlayout
 layout fragment_chart
 layout fragment_main
+layout fragment_manager
 layout loading
+layout manager_view_holder
 menu navigator_menu
 mipmap ic_launcher
 mipmap ic_launcher_round

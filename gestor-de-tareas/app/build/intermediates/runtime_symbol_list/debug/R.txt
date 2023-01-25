@@ -1330,6 +1330,7 @@ int color error_color_material_dark 0x7f060058
 int color error_color_material_light 0x7f060059
 int color foreground_material_dark 0x7f06005a
 int color foreground_material_light 0x7f06005b
+int color green 0x7f060263
 int color highlighted_text_material_dark 0x7f06005c
 int color highlighted_text_material_light 0x7f06005d
 int color m3_appbar_overlay_color 0x7f06005e
@@ -2657,6 +2658,7 @@ int id FUNCTION 0x7f090004
 int id META 0x7f090005
 int id NO_DEBUG 0x7f090006
 int id RecyclerView 0x7f090007
+int id RecyclerView2 0x7f090204
 int id SHIFT 0x7f090008
 int id SHOW_ALL 0x7f090009
 int id SHOW_PATH 0x7f09000a
@@ -2757,6 +2759,7 @@ int id callMeasure 0x7f090068
 int id cancel_action 0x7f090069
 int id cancel_button 0x7f09006a
 int id carryVelocity 0x7f09006b
+int id category 0x7f090202
 int id center 0x7f09006c
 int id centerCrop 0x7f09006d
 int id centerInside 0x7f09006e
@@ -2873,6 +2876,7 @@ int id guideline 0x7f0900dc
 int id header_title 0x7f0900dd
 int id hideable 0x7f0900de
 int id holder 0x7f0900df
+int id holder2 0x7f090203
 int id home 0x7f0900e0
 int id homeAsUp 0x7f0900e1
 int id honorRequest 0x7f0900e2
@@ -3310,11 +3314,13 @@ int layout design_text_input_end_icon 0x7f0c0031
 int layout design_text_input_start_icon 0x7f0c0032
 int layout fragment_chart 0x7f0c0033
 int layout fragment_main 0x7f0c0034
+int layout fragment_manager 0x7f0c0079
 int layout loading 0x7f0c0035
 int layout m3_alert_dialog 0x7f0c0036
 int layout m3_alert_dialog_actions 0x7f0c0037
 int layout m3_alert_dialog_title 0x7f0c0038
 int layout m3_auto_complete_simple_item 0x7f0c0039
+int layout manager_view_holder 0x7f0c007a
 int layout material_chip_input_combo 0x7f0c003a
 int layout material_clock_display 0x7f0c003b
 int layout material_clock_display_divider 0x7f0c003c

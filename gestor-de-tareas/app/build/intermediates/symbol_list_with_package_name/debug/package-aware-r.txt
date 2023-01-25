@@ -1331,6 +1331,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color m3_appbar_overlay_color
@@ -2658,6 +2659,7 @@ id FUNCTION
 id META
 id NO_DEBUG
 id RecyclerView
+id RecyclerView2
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -2758,6 +2760,7 @@ id callMeasure
 id cancel_action
 id cancel_button
 id carryVelocity
+id category
 id center
 id centerCrop
 id centerInside
@@ -2874,6 +2877,7 @@ id guideline
 id header_title
 id hideable
 id holder
+id holder2
 id home
 id homeAsUp
 id honorRequest
@@ -3311,11 +3315,13 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_chart
 layout fragment_main
+layout fragment_manager
 layout loading
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
 layout m3_auto_complete_simple_item
+layout manager_view_holder
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider

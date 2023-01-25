@@ -1,4 +1,7 @@
 package com.afundacion.gestordetareas;
+
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -11,14 +14,19 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.afundacion.gestordetareas.Fragments.MainFragment;
+import com.afundacion.gestordetareas.activities.fragmentCreatiom;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
 public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder> {
     private List<TaskData> allthedata;
     private Activity activity;
-    private TextView textView;
+    private TextView title, date, description;
 
 
     public TaskRecyclerViewAdapter(List<TaskData> dataset, Fragment fragment){
@@ -31,8 +39,6 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     public TaskViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_task_view_holder,
                 parent,false);
-
-
 
         return new TaskViewHolder(view);
     }
@@ -52,9 +58,18 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     allthedata.remove(position);
     notifyDataSetChanged();
 
-
-
     }
+   
+    public void markAsCompleted(int position, View view){
+        title= view.findViewById(R.id.title);
+        title.setBackgroundColor(0xFF4CAF50);
+        date= view.findViewById(R.id.date);
+        date.setBackgroundColor(0xFF4CAF50);
+        description= view.findViewById(R.id.description);
+        description.setBackgroundColor(0xFF4CAF50);
+    }
+
+
 
 
 }

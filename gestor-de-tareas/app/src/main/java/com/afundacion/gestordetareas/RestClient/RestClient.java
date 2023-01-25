@@ -54,29 +54,31 @@ public class RestClient {
         }
 
         JsonObjectRequest request = new JsonObjectRequest(
-                Request.Method.POST,
-                URL + "/users",
+                Request.Method.GET,
+                URL + "/users?email="+email.getText().toString(),
                 requestBody,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        String receivedToken, userNif;
+                        String receivedPassword, receivedToken;
                         try {
+                            receivedPassword = response.getString("password");
                             receivedToken = response.getString("token");
-                            System.out.println(receivedToken);
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
-                        Intent main = new Intent(context, MainActivity.class);
-                        main.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        context.startActivity(main);
-                        SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS",MODE_PRIVATE);
-                        SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString("VALID_EMAIL", email.getText().toString());
-                        editor.putString("VALID_TOKEN", receivedToken);
-                        editor.commit();
-                        ((Activity) context).finish();
+                        if(receivedPassword.equals(password.getText().toString())){
+                            Intent main = new Intent(context, MainActivity.class);
+                            main.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                    .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            context.startActivity(main);
+                            SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS",MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            editor.putString("VALID_EMAIL", email.getText().toString());
+                            editor.putString("VALID_TOKEN", receivedToken);
+                            editor.commit();
+                            ((Activity) context).finish();
+                        }
                     }
                 },
                 new Response.ErrorListener() {

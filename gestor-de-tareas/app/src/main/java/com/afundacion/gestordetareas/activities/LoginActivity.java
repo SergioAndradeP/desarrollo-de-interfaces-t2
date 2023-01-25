@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.afundacion.gestordetareas.R;
-import com.afundacion.gestordetareas.utils.RestClient;
+import com.afundacion.gestordetareas.RestClient.RestClient;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText email, password;

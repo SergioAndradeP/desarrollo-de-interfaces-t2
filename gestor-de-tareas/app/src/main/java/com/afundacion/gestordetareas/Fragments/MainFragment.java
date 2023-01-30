@@ -202,10 +202,12 @@ public class MainFragment extends Fragment {
          super.onContextItemSelected(item);
          switch (item.getItemId()){
              case 101:
-                 Toast.makeText(context,Integer.toString(item.getGroupId()), Toast.LENGTH_LONG).show();
-                 adapter.deleteTask(item.getGroupId());
-                 recyclerView.removeViewAt(item.getGroupId());
-                 //client.deleteTaskRequest(2);
+//                 Toast.makeText(context,adapter.getPosition(), Toast.LENGTH_LONG).show();
+//                 adapter.deleteTask(item.getGroupId());
+//                 recyclerView.removeViewAt(item.getGroupId());
+                 int position= adapter.getPosition();
+                 client= RestClient.getInstance(context);
+                 client.deleteTaskRequest(position);
                  return true;
              case 102:
                  Toast.makeText(context,"marcada como competada", Toast.LENGTH_LONG).show();

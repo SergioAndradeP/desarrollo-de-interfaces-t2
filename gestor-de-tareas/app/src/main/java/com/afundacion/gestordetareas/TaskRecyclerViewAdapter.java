@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.afundacion.gestordetareas.Fragments.MainFragment;
+import com.afundacion.gestordetareas.RestClient.RestClient;
 import com.afundacion.gestordetareas.activities.fragmentCreatiom;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -27,6 +28,8 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     private List<TaskData> allthedata;
     private Activity activity;
     private TextView title, date, description;
+    private int position;
+
 
 
     public TaskRecyclerViewAdapter(List<TaskData> dataset, Fragment fragment){
@@ -56,7 +59,12 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     public  void deleteTask(int position){
 
     allthedata.remove(position);
+
     notifyDataSetChanged();
+
+    }
+    public int getPosition(){
+        return allthedata.get(position).getId();
 
     }
    

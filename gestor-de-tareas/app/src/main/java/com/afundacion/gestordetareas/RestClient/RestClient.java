@@ -65,15 +65,11 @@ public class RestClient {
 
     public void deleteTaskRequest(int id){
 
-        JSONObject task = null;
-        try {
-            task.put("id", id);
-        } catch (JSONException e) {
-            throw new RuntimeException();
-        }
+
+
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.DELETE,
-                "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/2/tasks/"+id,task,
+                "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/2/tasks/"+id,null,
 
                 new Response.Listener<JSONObject>() {
                     @Override

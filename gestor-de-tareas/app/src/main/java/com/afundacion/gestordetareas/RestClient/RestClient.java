@@ -26,6 +26,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,7 +51,9 @@ public class RestClient {
 
 
     private RestClient(Context context){
+
         this.context = context;
+        queue = Volley.newRequestQueue(context);
     }
 
     public static RestClient getInstance(Context context){
@@ -90,7 +93,7 @@ public class RestClient {
 
     public void isCompleted(int id){
 
-        JSONObject task = null;
+        JSONObject task = new JSONObject();
         try {
             task.put("completed", true);
         } catch (JSONException e) {

@@ -38,14 +38,15 @@
         android:id="@+id/boton_login">
     </Button>
 
-    <Button
+    <TextView
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/boton_login"
         android:text="Registrarse"
-        android:id="@+id/boton_registro">
-    </Button>
+        android:layout_marginStart="80dp"
+        android:id="@+id/texto_registro">
+    </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

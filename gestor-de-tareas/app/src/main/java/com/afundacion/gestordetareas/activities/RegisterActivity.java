@@ -34,8 +34,9 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (password.getText().toString().equals(repeatPassword.getText().toString())){
-                    client.registerUser(name, email, password);
+                    client.registerUser(name, email, password, context);
                 }
+
             }
         });
     }

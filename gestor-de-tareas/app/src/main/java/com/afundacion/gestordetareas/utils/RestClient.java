@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.android.material.textfield.TextInputEditText;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -45,6 +46,33 @@ public class RestClient {
 
 
     // Métodos que lanzan peticiones
+
+
+    public JSONObject getNumberTareas(Response.Listener<JSONObject> respuesta){
+        JSONObject tareas = new JSONObject();
+
+        JsonObjectRequestWithAuthentication request= new JsonObjectRequestWithAuthentication(
+                Request.Method.GET,
+                singleton.BASE_URL,
+                null,
+                respuesta,
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }, context
+
+
+        );
+
+
+
+
+        return response;
+
+
+    }
 
     public void submitTarea(String titulo, String descripcion, String fecha, String tipo){
         JSONObject tarea = new JSONObject();

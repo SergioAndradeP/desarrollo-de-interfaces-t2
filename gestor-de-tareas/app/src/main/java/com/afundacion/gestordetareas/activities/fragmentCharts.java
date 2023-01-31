@@ -12,9 +12,14 @@ import androidx.fragment.app.Fragment;
 
 import com.afundacion.gestordetareas.R;
 import com.afundacion.gestordetareas.utils.RestClient;
+import com.android.volley.Response;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +38,23 @@ public class fragmentCharts extends Fragment {
         super.onCreate(savedInstanceState);
         context = getContext();
         client = RestClient.getInstance(context);
+        JSONObject tareas7dias = new JSONObject();
+        JSONArray cadaDia = new JSONArray();
+        tareas7dias = client.getNumberTareas(     new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    tareas7dias = response;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        try {
+            cadaDia = tareas7dias.getJSONArray("tareas");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
 
         View view = inflater.inflate(R.layout.fragment_chart, container, false);

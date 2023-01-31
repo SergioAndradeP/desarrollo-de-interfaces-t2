@@ -44,63 +44,30 @@ public class RestClient {
         return singleton;
     }
 
-    public void loginUser(EditText email, EditText password){
+    public void loginUser(EditText email, EditText password, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener){
         JSONObject requestBody = new JSONObject();
         try{
             requestBody.put("email", email.getText().toString());
             requestBody.put("password", password.getText().toString());
+            System.out.println(URL + "users?email="+email.getText().toString());
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.GET,
-                URL + "/users?email="+email.getText().toString(),
+                URL + "users?email="+email.getText().toString(),
                 requestBody,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        String receivedPassword, receivedToken;
-                        try {
-                            receivedPassword = response.getString("password");
-                            receivedToken = response.getString("token");
-                        } catch (JSONException e) {
-                            throw new RuntimeException(e);
-                        }
-                        if(receivedPassword.equals(password.getText().toString())){
-                            Intent main = new Intent(context, MainActivity.class);
-                            main.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                                    .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            context.startActivity(main);
-                            SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS",MODE_PRIVATE);
-                            SharedPreferences.Editor editor = preferences.edit();
-                            editor.putString("VALID_EMAIL", email.getText().toString());
-                            editor.putString("VALID_TOKEN", receivedToken);
-                            editor.commit();
-                            ((Activity) context).finish();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        if(error.networkResponse==null){
-                            Toast.makeText(context,"No se pudo establecer la conexión",Toast.LENGTH_LONG).show();
-                        }
-                        else{
-                            int serverCode = error.networkResponse.statusCode;
-                            Toast.makeText(context,"Estado de respuesta: "+serverCode,Toast.LENGTH_LONG).show();
-                        }
-                    }
-                }
+                listener,
+                errorListener
         );
         this.queue.add(request);
     }
 
-    public void registerUser(TextInputEditText nombre, EditText email, EditText contrasena){
+    public void registerUser(EditText nombre, EditText email, EditText contrasena, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener){
         JSONObject requestBody = new JSONObject();
         try {
-            requestBody.put("nombre", nombre.getText().toString());
+            requestBody.put("name", nombre.getText().toString());
             requestBody.put("email", email.getText().toString());
             requestBody.put("password", contrasena.getText().toString());
         } catch (JSONException e) {
@@ -108,27 +75,10 @@ public class RestClient {
         }
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                URL + "/users",
+                URL + "users",
                 requestBody,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Toast.makeText(context, "Usuario registrado", Toast.LENGTH_LONG).show();
-                        ((Activity)context).finish();
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        if(error.networkResponse==null){
-                            Toast.makeText(context,"No se pudo establecer la conexión",Toast.LENGTH_LONG).show();
-                        }
-                        else{
-                            int serverCode = error.networkResponse.statusCode;
-                            Toast.makeText(context,"Estado de respuesta: "+serverCode,Toast.LENGTH_LONG).show();
-                        }
-                    }
-                }
+                listener,
+                errorListener
         );
         this.queue.add(request);
     }

@@ -29,12 +29,15 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     private Activity activity;
     private TextView title, date, description;
     private int position;
+    private RestClient client;
+    private Context context;
 
 
 
     public TaskRecyclerViewAdapter(List<TaskData> dataset, Fragment fragment){
         this.allthedata= dataset;
         this.activity= activity;
+        context= fragment.getContext();
     }
 
     @NonNull
@@ -58,7 +61,10 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     }
     public  void deleteTask(int position){
 
-    allthedata.remove(position);
+    int id= allthedata.get(position).getId();
+
+    client= RestClient.getInstance(context);
+    client.deleteTaskRequest(id);
 
     notifyDataSetChanged();
 
@@ -69,6 +75,9 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     }
    
     public void markAsCompleted(int position, View view){
+        int id= allthedata.get(position).getId();
+        client= RestClient.getInstance(context);
+        client.isCompleted(id);
         title= view.findViewById(R.id.title);
         title.setBackgroundColor(0xFF4CAF50);
         date= view.findViewById(R.id.date);

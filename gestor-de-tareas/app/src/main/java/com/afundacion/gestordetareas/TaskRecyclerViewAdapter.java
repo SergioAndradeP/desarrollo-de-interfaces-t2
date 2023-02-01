@@ -53,6 +53,7 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     public void onBindViewHolder(@NonNull TaskViewHolder holder, int position) {
         TaskData dataInPositionToBeRendered= allthedata.get(position);
         holder.showData(dataInPositionToBeRendered, activity);
+
     }
 
     @Override
@@ -69,15 +70,15 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     notifyDataSetChanged();
 
     }
-    public int getPosition(){
+    public int getId(){
         return allthedata.get(position).getId();
 
     }
    
-    public void markAsCompleted(int position, View view){
-        int id= allthedata.get(position).getId();
+    public void markAsCompleted(int position,int id, View view){
+
         client= RestClient.getInstance(context);
-        client.isCompleted(id);
+        //client.isCompleted(id);
         title= view.findViewById(R.id.title);
         title.setBackgroundColor(0xFF4CAF50);
         date= view.findViewById(R.id.date);

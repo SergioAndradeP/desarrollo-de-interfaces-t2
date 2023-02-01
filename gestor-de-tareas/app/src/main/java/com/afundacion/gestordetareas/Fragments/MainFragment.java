@@ -200,20 +200,24 @@ public class MainFragment extends Fragment {
         Context context= getContext();
         View view= getView();
         int position;
+        int id;
          super.onContextItemSelected(item);
          switch (item.getItemId()){
              case 101:
                  //Toast.makeText(context,adapter.getPosition(), Toast.LENGTH_LONG).show();
-                 position= adapter.getPosition();
+                 position= adapter.getId();
                  recyclerView.removeViewAt(item.getGroupId());
                  adapter.deleteTask(item.getGroupId());
 
 
                  return true;
              case 102:
-                 Toast.makeText(context,"marcada como competada", Toast.LENGTH_LONG).show();
-                 adapter.markAsCompleted(item.getGroupId(),view);
-                 position= adapter.getPosition();
+                 id= adapter.getId();
+                 position= item.getGroupId();
+                 Toast.makeText(context,Integer.toString(id), Toast.LENGTH_LONG).show();
+                 adapter.markAsCompleted(position,id,view);
+
+
 
                  return true;
              default:

@@ -23,7 +23,9 @@ import org.json.JSONObject;
 
 public class RestClient {
 
-    private String URL = "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/";
+    private String URL = "https://63be7c54e348cb07620fda89.mockapi.io/api/v1";
+
+    private String MOCK_TOKEN = "7EW878QEE4E5DF5";
 
     private Context context;
 
@@ -56,7 +58,7 @@ public class RestClient {
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.GET,
-                URL + "users?email="+email.getText().toString(),
+                URL + "/users?email="+email.getText().toString(),
                 requestBody,
                 listener,
                 errorListener
@@ -70,6 +72,7 @@ public class RestClient {
             requestBody.put("name", nombre.getText().toString());
             requestBody.put("email", email.getText().toString());
             requestBody.put("password", contrasena.getText().toString());
+            requestBody.put("token", MOCK_TOKEN);
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }

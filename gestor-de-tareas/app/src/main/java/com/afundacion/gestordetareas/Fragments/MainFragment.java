@@ -204,20 +204,12 @@ public class MainFragment extends Fragment {
          super.onContextItemSelected(item);
          switch (item.getItemId()){
              case 101:
-                 //Toast.makeText(context,adapter.getPosition(), Toast.LENGTH_LONG).show();
-                 position= adapter.getId();
-                 recyclerView.removeViewAt(item.getGroupId());
                  adapter.deleteTask(item.getGroupId());
-
-
                  return true;
              case 102:
-                 id= adapter.getId();
-                 position= item.getGroupId();
-                 Toast.makeText(context,Integer.toString(id), Toast.LENGTH_LONG).show();
-                 adapter.markAsCompleted(position,id,view);
-
-
+                 id= adapter.getId(item.getGroupId());
+                 client= RestClient.getInstance(context);
+                 client.isCompleted(id);
 
                  return true;
              default:

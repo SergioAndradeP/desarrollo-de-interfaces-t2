@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -53,6 +54,11 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     public void onBindViewHolder(@NonNull TaskViewHolder holder, int position) {
         TaskData dataInPositionToBeRendered= allthedata.get(position);
         holder.showData(dataInPositionToBeRendered, activity);
+        if(allthedata.get(position).getCompleted()){
+           holder.itemView.setBackgroundColor(Color.GREEN);
+
+        }
+
 
     }
 
@@ -66,19 +72,19 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
 
     client= RestClient.getInstance(context);
     client.deleteTaskRequest(id);
-
+    allthedata.remove(position);
     notifyDataSetChanged();
 
     }
-    public int getId(){
+    public int getId(int position){
+
         return allthedata.get(position).getId();
 
     }
    
     public void markAsCompleted(int position,int id, View view){
 
-        client= RestClient.getInstance(context);
-        //client.isCompleted(id);
+
         title= view.findViewById(R.id.title);
         title.setBackgroundColor(0xFF4CAF50);
         date= view.findViewById(R.id.date);

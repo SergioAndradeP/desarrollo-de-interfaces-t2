@@ -14,10 +14,12 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -46,20 +48,12 @@ public class RestClient {
         return singleton;
     }
 
-    public void loginUser(EditText email, EditText password, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener){
-        JSONObject requestBody = new JSONObject();
-        try{
-            requestBody.put("email", email.getText().toString());
-            requestBody.put("password", password.getText().toString());
-            System.out.println(URL + "users?email="+email.getText().toString());
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
+    public void loginUser(EditText email, EditText password, Response.Listener<JSONArray> listener, Response.ErrorListener errorListener){
 
-        JsonObjectRequest request = new JsonObjectRequest(
+        JsonArrayRequest request = new JsonArrayRequest(
                 Request.Method.GET,
                 URL + "/users?email="+email.getText().toString(),
-                requestBody,
+                null,
                 listener,
                 errorListener
         );

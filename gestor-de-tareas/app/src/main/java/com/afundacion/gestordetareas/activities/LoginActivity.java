@@ -20,6 +20,7 @@ import com.afundacion.gestordetareas.RestClient.RestClient;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -42,13 +43,13 @@ public class LoginActivity extends AppCompatActivity {
         botonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                client.loginUser(email, password, new Response.Listener<JSONObject>() {
+                client.loginUser(email, password, new Response.Listener<JSONArray>() {
                             @Override
-                            public void onResponse(JSONObject response) {
+                            public void onResponse(JSONArray response) {
                                 String receivedPassword, receivedToken;
                                 try {
-                                    receivedPassword = response.getString("password");
-                                    receivedToken = response.getString("token");
+                                    receivedPassword = response.getJSONObject(0).getString("password");
+                                    receivedToken = response.getJSONObject(0).getString("token");
                                 } catch (JSONException e) {
                                     throw new RuntimeException(e);
                                 }

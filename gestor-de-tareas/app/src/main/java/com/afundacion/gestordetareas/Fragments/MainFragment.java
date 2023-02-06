@@ -210,6 +210,7 @@ public class MainFragment extends Fragment {
          switch (item.getItemId()){
              case 101:
                  adapter.deleteTask(item.getGroupId());
+                 //adapter.notify();
                  return true;
              case 102:
                  id= adapter.getId(item.getGroupId());

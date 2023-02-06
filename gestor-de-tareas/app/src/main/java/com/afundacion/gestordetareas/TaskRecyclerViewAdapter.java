@@ -62,6 +62,7 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
             date.setBackgroundColor(0xFF4CAF50);
             description= holder.itemView.findViewById(R.id.description);
             description.setBackgroundColor(0xFF4CAF50);
+            //notify();
 
 
         }
@@ -72,6 +73,7 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
             date.setBackgroundColor(0xFF8D0432);
             description= holder.itemView.findViewById(R.id.description);
             description.setBackgroundColor(0xFF8D0432);
+            //notify();
         }
 
 
@@ -88,6 +90,7 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     client= RestClient.getInstance(context);
     client.deleteTaskRequest(id);
     allthedata.remove(position);
+    notifyItemRemoved(position);
 
 
     }

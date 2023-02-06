@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:text="Categoría: "
         android:textAlignment="center"
-        android:background="#E91E63"
+        android:background="#CC396A"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

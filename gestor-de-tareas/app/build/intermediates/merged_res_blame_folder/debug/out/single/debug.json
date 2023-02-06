@@ -36,12 +36,12 @@
         "source": "C:\\Users\\Hector\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-main-33:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Hector\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-merged_res-31:\\layout_loading.xml.flat",
-        "source": "C:\\Users\\Hector\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-main-33:\\layout\\loading.xml"
-    },
-    {
         "merged": "C:\\Users\\Hector\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-merged_res-31:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Hector\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-main-33:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Hector\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-merged_res-31:\\layout_loading.xml.flat",
+        "source": "C:\\Users\\Hector\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-main-33:\\layout\\loading.xml"
     },
     {
         "merged": "C:\\Users\\Hector\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-merged_res-31:\\xml_backup_rules.xml.flat",

@@ -3,6 +3,7 @@ package com.afundacion.gestordetareas.Fragments;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -93,6 +94,9 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Context context= getContext();
+        //SharedPreferences prefs =context.getSharedPreferences("usuario", Context.MODE_PRIVATE);
+        //String id = login.getString("user",null);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -145,8 +149,8 @@ public class MainFragment extends Fragment {
                                     try {
                                         JSONObject task= response.getJSONObject(i);
                                         TaskData aTask= new TaskData(task);
-                                        if(Utils.DateIsFuture(aTask.getDate()))
-                                            listaTasks.add(aTask);
+                                        //if(Utils.DateIsFuture(aTask.getDate()))
+                                        listaTasks.add(aTask);
 
                                     } catch (JSONException e) {
                                         e.printStackTrace();

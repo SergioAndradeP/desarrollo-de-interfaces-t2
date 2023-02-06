@@ -156,21 +156,14 @@ public class RestClient {
     });
                 queue.add(request);
     }
+    
 
-    public void loginUser(EditText email, EditText password, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener){
-        JSONObject requestBody = new JSONObject();
-        try{
-            requestBody.put("email", email.getText().toString());
-            requestBody.put("password", password.getText().toString());
-            System.out.println(URL + "users?email="+email.getText().toString());
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
+    public void loginUser(EditText email, EditText password, Response.Listener<JSONArray> listener, Response.ErrorListener errorListener){
 
-        JsonObjectRequest request = new JsonObjectRequest(
+        JsonArrayRequest request = new JsonArrayRequest(
                 Request.Method.GET,
                 URL + "/users?email="+email.getText().toString(),
-                requestBody,
+                null,
                 listener,
                 errorListener
         );

@@ -48,12 +48,12 @@
         "source": "C:\\Users\\Hector\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-main-33:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.afundacion.gestordetareas.app-merged_res-31:/layout_fragment_manager.xml.flat",
-        "source": "com.afundacion.gestordetareas.app-main-33:/layout/fragment_manager.xml"
-    },
-    {
         "merged": "C:\\Users\\Hector\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-merged_res-31:\\layout_fragment_manager.xml.flat",
         "source": "C:\\Users\\Hector\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-main-33:\\layout\\fragment_manager.xml"
+    },
+    {
+        "merged": "com.afundacion.gestordetareas.app-merged_res-31:/layout_manager_view_holder.xml.flat",
+        "source": "com.afundacion.gestordetareas.app-main-33:/layout/manager_view_holder.xml"
     },
     {
         "merged": "C:\\Users\\Hector\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-merged_res-31:\\layout_activity_menu.xml.flat",

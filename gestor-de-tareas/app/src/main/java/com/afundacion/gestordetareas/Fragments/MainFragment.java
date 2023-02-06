@@ -23,6 +23,7 @@ import com.afundacion.gestordetareas.RestClient.RestClient;
 import com.afundacion.gestordetareas.TaskData;
 import com.afundacion.gestordetareas.TaskRecyclerViewAdapter;
 import com.afundacion.gestordetareas.TaskViewHolder;
+import com.afundacion.gestordetareas.Utils;
 import com.afundacion.gestordetareas.activities.fragmentCreatiom;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -144,8 +145,8 @@ public class MainFragment extends Fragment {
                                     try {
                                         JSONObject task= response.getJSONObject(i);
                                         TaskData aTask= new TaskData(task);
-
-                                        listaTasks.add(aTask);
+                                        if(Utils.DateIsFuture(aTask.getDate()))
+                                            listaTasks.add(aTask);
 
                                     } catch (JSONException e) {
                                         e.printStackTrace();
@@ -210,6 +211,7 @@ public class MainFragment extends Fragment {
                  id= adapter.getId(item.getGroupId());
                  client= RestClient.getInstance(context);
                  client.isCompleted(id);
+
 
                  return true;
              default:

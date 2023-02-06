@@ -55,7 +55,14 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
         TaskData dataInPositionToBeRendered= allthedata.get(position);
         holder.showData(dataInPositionToBeRendered, activity);
         if(allthedata.get(position).getCompleted()){
-           holder.itemView.setBackgroundColor(Color.GREEN);
+           //holder.itemView.setBackgroundColor(Color.GREEN);
+            title= holder.itemView.findViewById(R.id.title);
+            title.setBackgroundColor(0xFF4CAF50);
+            date= holder.itemView.findViewById(R.id.date);
+            date.setBackgroundColor(0xFF4CAF50);
+            description= holder.itemView.findViewById(R.id.description);
+            description.setBackgroundColor(0xFF4CAF50);
+
 
         }
 
@@ -73,7 +80,7 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     client= RestClient.getInstance(context);
     client.deleteTaskRequest(id);
     allthedata.remove(position);
-    notifyDataSetChanged();
+
 
     }
     public int getId(int position){
@@ -81,17 +88,7 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
         return allthedata.get(position).getId();
 
     }
-   
-    public void markAsCompleted(int position,int id, View view){
 
-
-        title= view.findViewById(R.id.title);
-        title.setBackgroundColor(0xFF4CAF50);
-        date= view.findViewById(R.id.date);
-        date.setBackgroundColor(0xFF4CAF50);
-        description= view.findViewById(R.id.description);
-        description.setBackgroundColor(0xFF4CAF50);
-    }
 
 
 

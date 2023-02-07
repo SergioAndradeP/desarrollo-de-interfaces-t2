@@ -31,7 +31,7 @@ public  class Utils {
 
     public Calendar dateFormat(String date) throws ParseException {
         Calendar c1 = Calendar.getInstance();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Date date1 = format.parse(date);
         c1.setTime(date1);
         return c1;

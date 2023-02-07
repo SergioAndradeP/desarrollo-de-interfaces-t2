@@ -10,8 +10,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.afundacion.gestordetareas.Fragments.MainFragment;
 
-import com.afundacion.gestordetareas.activities.RegisterActivity;
+import com.afundacion.gestordetareas.TaskData;
+import com.afundacion.gestordetareas.Utils;
 
+import com.afundacion.gestordetareas.activities.fragmentCharts;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -21,12 +23,16 @@ import com.android.volley.toolbox.JsonObjectRequest;
 
 import com.android.volley.toolbox.Volley;
 
-import com.google.android.material.textfield.TextInputEditText;
-
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class RestClient {
 
@@ -56,20 +62,15 @@ public class RestClient {
     // Métodos que lanzan peticiones
 
 
-    public void getNumberTareas(Response.Listener<JSONArray> respuesta){
-        JSONObject tareas = new JSONObject();
+    public void getNumberTareas(Response.Listener respuesta ,Response.ErrorListener error){
 
             JsonArrayRequest request= new JsonArrayRequest(
                 Request.Method.GET,
-                singleton.BASE_URL,
+                    "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/2/tasks",
                 null,
-                respuesta,
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                    }
-                });
+                    respuesta,
+                error);
+            this.queue.add(request);
 
     }
 

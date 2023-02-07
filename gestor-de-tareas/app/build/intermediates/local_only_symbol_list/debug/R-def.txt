@@ -26,6 +26,7 @@ id edit_text_email
 id fab
 id fechaTarea
 id frameLayout
+id graph
 id holder
 id holder2
 id home

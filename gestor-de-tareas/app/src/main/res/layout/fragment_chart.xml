@@ -8,5 +8,8 @@
         android:id="@+id/graph"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:seriesData="0=5;2=5;3=0;4=2"
+        app:seriesType="line"
+        app:seriesColor="#003CEE"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -114,8 +114,10 @@ public class RestClient {
                     @Override
                     public void onResponse(JSONObject response) {
                         String receivedToken;
+                        int id;
                         try {
                             receivedToken = response.getString("token");
+                            id = response.getInt("id");
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
@@ -127,6 +129,7 @@ public class RestClient {
                         SharedPreferences.Editor editor = preferences.edit();
                         editor.putString("VALID_EMAIL", email.getText().toString());
                         editor.putString("VALID_TOKEN", receivedToken);
+                        editor.putInt("ID", id);
                         editor.commit();
                         ((Activity) context).finish();
                     }

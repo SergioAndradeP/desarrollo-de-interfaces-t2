@@ -1,5 +1,7 @@
 package com.afundacion.gestordetareas.Fragments;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -109,7 +111,8 @@ public class MainFragment extends Fragment {
         Context context= getContext();
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_main, container, false);
-
+        SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS_PREFS",MODE_PRIVATE);
+        int id = preferences.getInt("ID",0);
         //En el activity_main.xml solo tenemos el RecycerViewer. Aquí le asignamos al objeto
         //recyclerview el recyclerviewer del xml
         this.recyclerView = view.findViewById(R.id.RecyclerView);
@@ -210,12 +213,13 @@ public class MainFragment extends Fragment {
          switch (item.getItemId()){
              case 101:
                  adapter.deleteTask(item.getGroupId());
-                 //adapter.notify();
+                 //adapter.notifyDataSetChanged();
                  return true;
              case 102:
                  id= adapter.getId(item.getGroupId());
                  client= RestClient.getInstance(context);
                  client.isCompleted(id);
+                 //adapter.notifyDataSetChanged();
 
 
                  return true;

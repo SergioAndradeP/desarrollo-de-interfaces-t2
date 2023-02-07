@@ -6,11 +6,13 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -203,22 +205,31 @@ public class MainFragment extends Fragment {
         return inflatedView;
     }
 
+
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         Context context= getContext();
         View view= getView();
+
         int position;
         int id;
          super.onContextItemSelected(item);
          switch (item.getItemId()){
              case 101:
                  adapter.deleteTask(item.getGroupId());
+                 getActivity().getSupportFragmentManager().beginTransaction().detach(MainFragment.this).commit();
+                 getActivity().getSupportFragmentManager().beginTransaction().attach(MainFragment.this).commit();
+               
                  //adapter.notifyDataSetChanged();
                  return true;
              case 102:
                  id= adapter.getId(item.getGroupId());
                  client= RestClient.getInstance(context);
                  client.isCompleted(id);
+                 getActivity().getSupportFragmentManager().beginTransaction().detach(this).commit();
+                 getActivity().getSupportFragmentManager().beginTransaction().attach(this).commit();
+
+
                  //adapter.notifyDataSetChanged();
 
 

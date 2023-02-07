@@ -89,10 +89,12 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     int id= allthedata.get(position).getId();
 
     allthedata.remove(position);
-    notifyDataSetChanged();
+    notifyItemRemoved(position);
 
     client= RestClient.getInstance(context);
     client.deleteTaskRequest(id);
+
+
 
 
     }

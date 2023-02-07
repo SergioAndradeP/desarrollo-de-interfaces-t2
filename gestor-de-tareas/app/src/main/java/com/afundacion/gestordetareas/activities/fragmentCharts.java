@@ -42,7 +42,7 @@ public class fragmentCharts extends Fragment {
     Context context;
     GraphView graph;
     RestClient client;
-     int[] listInt = new int[7];
+    int[] listInt = new int[7];
 
     public void setArraylist(List<TaskData> list){
         for(int i = 0; i < list.size(); i++){
@@ -55,6 +55,9 @@ public class fragmentCharts extends Fragment {
                 System.out.println("new task");
 
                 DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+
+
                 Date dateM = format.parse(list.get(i).getDate());
 
                 String dateS = formatter.format(date);
@@ -64,6 +67,7 @@ public class fragmentCharts extends Fragment {
 
                 if(dateS.equalsIgnoreCase(dateMS)){
                     listInt[0]++;
+                    System.out.println("entró");
                 }
 
                 date = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(6));
@@ -72,6 +76,7 @@ public class fragmentCharts extends Fragment {
 
                 if(dateS.equalsIgnoreCase(dateMS)){
                     listInt[1]++;
+                    System.out.println("entró1");
                 }
 
                 date = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(5));
@@ -80,6 +85,7 @@ public class fragmentCharts extends Fragment {
 
                 if(dateS.equalsIgnoreCase(dateMS)){
                     listInt[2]++;
+                    System.out.println("entró2");
                 }
 
 
@@ -87,6 +93,7 @@ public class fragmentCharts extends Fragment {
                 dateS = formatter.format(date);
                 if(dateS.equalsIgnoreCase(dateMS)){
                     listInt[3]++;
+                    System.out.println("entró3");
                 }
 
                 date = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(3));
@@ -94,18 +101,21 @@ public class fragmentCharts extends Fragment {
 
                 if(dateS.equalsIgnoreCase(dateMS)){
                     listInt[4]++;
+                    System.out.println("entró4");
                 }
 
                 date = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(2));
                 dateS = formatter.format(date);
                 if(dateS.equalsIgnoreCase(dateMS)){
                     listInt[5]++;
+                    System.out.println("entró5");
                 }
 
                 date = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(1));
                 dateS = formatter.format(date);
                 if(dateS.equalsIgnoreCase(dateMS)){
                     listInt[6]++;
+                    System.out.println("entró6");
                 }
             } catch (ParseException e) {
                 e.printStackTrace();
@@ -113,6 +123,18 @@ public class fragmentCharts extends Fragment {
 
         }
 
+        List<DataPoint> points = new ArrayList<>();
+        points.add(new DataPoint(0, listInt[0]));
+        points.add(new DataPoint(1, listInt[1]));
+        points.add(new DataPoint(2, listInt[2]));
+        points.add(new DataPoint(3, listInt[3]));
+        points.add(new DataPoint(4, listInt[4]));
+        points.add(new DataPoint(5, listInt[5]));
+        points.add(new DataPoint(6, listInt[6]));
+
+
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(points.toArray(new DataPoint[0]));
+        graph.addSeries(series);
 
 
 
@@ -140,8 +162,12 @@ public class fragmentCharts extends Fragment {
                         e.printStackTrace();
                     }
                 }
+                System.out.println("aplicar metodo");
                 setArraylist(lista);
-                //setArraylist(response);
+
+
+
+
 
             }
         },new Response.ErrorListener() {
@@ -158,18 +184,6 @@ public class fragmentCharts extends Fragment {
         View view = inflater.inflate(R.layout.fragment_chart, container, false);
         graph = view.findViewById(R.id.graph);
 
-        List<DataPoint> points = new ArrayList<>();
-        points.add(new DataPoint(0, listInt[0]));
-        points.add(new DataPoint(1, listInt[1]));
-        points.add(new DataPoint(2, listInt[2]));
-        points.add(new DataPoint(3, listInt[3]));
-        points.add(new DataPoint(4, listInt[4]));
-        points.add(new DataPoint(5, listInt[5]));
-        points.add(new DataPoint(6, listInt[6]));
-
-
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(points.toArray(new DataPoint[0]));
-        graph.addSeries(series);
 
         return view;
 

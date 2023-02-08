@@ -25,7 +25,7 @@ public class LauncherActivity extends AppCompatActivity {
 
         startActivity(loginActivity);
 
-<<<<<<< HEAD
+
        /* SharedPreferences preferences = getSharedPreferences("GESTOR_DE_TAREAS_PREFS",MODE_PRIVATE);
 =======
        /* SharedPreferences preferences = getSharedPreferences("GESTOR_DE_TAREAS",MODE_PRIVATE);

@@ -3,7 +3,13 @@ package com.afundacion.gestordetareas;
 
 import android.view.View;
 import android.view.LayoutInflater;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public  class Utils {
 
@@ -21,6 +27,14 @@ public  class Utils {
             return true;
         }
         return false;
+    }
+
+    public Calendar dateFormat(String date) throws ParseException {
+        Calendar c1 = Calendar.getInstance();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date date1 = format.parse(date);
+        c1.setTime(date1);
+        return c1;
     }
 
 }

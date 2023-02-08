@@ -24,7 +24,7 @@ import androidx.fragment.app.Fragment;
 
 import com.afundacion.gestordetareas.R;
 import com.afundacion.gestordetareas.activities.fragmentCreatiom;
-
+import com.afundacion.gestordetareas.activities.fragmentCharts;
 import com.google.android.material.navigation.NavigationView;
 
 public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -88,6 +88,8 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                         drawerLayout.close();
                         break;
                     case R.id.statistics:
+                        Fragment fragmentCharts = new fragmentCharts();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,new fragmentCharts()).commit();
                         drawerLayout.close();
                         break;
                 }

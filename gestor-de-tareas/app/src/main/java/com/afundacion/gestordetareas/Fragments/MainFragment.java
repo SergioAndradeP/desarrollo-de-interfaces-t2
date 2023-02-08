@@ -224,10 +224,10 @@ public class MainFragment extends Fragment {
                  return true;
              case 102:
                  id= adapter.getId(item.getGroupId());
+                 adapter.completeTask(item.getGroupId());
                  client= RestClient.getInstance(context);
                  client.isCompleted(id);
-                 getActivity().getSupportFragmentManager().beginTransaction().detach(this).commit();
-                 getActivity().getSupportFragmentManager().beginTransaction().attach(this).commit();
+
 
 
                  //adapter.notifyDataSetChanged();

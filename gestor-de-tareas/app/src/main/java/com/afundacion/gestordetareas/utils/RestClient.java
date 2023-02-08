@@ -57,10 +57,12 @@ public class RestClient {
         JSONObject tarea = new JSONObject();
 
         try{
-            tarea.put("title",titulo);
+            tarea.put("name",titulo);
             tarea.put("description",descripcion);
-            tarea.put("date",fecha);
-            tarea.put("type",tipo);
+            tarea.put("deadline",fecha);
+            tarea.put("category",tipo);
+            tarea.put("completed", false);
+            tarea.put("userId", 2);
 
         }catch (JSONException e){
             throw new RuntimeException(e);
@@ -68,7 +70,7 @@ public class RestClient {
         }
         JsonObjectRequestWithAuthentication request = new JsonObjectRequestWithAuthentication(
                 Request.Method.POST,
-                "url",
+                BASE_URL+"/users/2/tasks",
                 tarea,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -79,6 +81,7 @@ public class RestClient {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(context, "No se ha podido añadir la tarea", Toast.LENGTH_LONG).show();
 
                     }
                 }, context

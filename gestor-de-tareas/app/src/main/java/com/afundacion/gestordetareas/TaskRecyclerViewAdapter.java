@@ -84,6 +84,7 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     public int getItemCount() {
         return allthedata.size();
     }
+
     public  void deleteTask(int position){
 
     int id= allthedata.get(position).getId();
@@ -97,6 +98,10 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
 
 
 
+    }
+    public void completeTask(int position){
+        allthedata.get(position).setCompleted(true);
+        notifyDataSetChanged();
     }
     public int getId(int position){
 

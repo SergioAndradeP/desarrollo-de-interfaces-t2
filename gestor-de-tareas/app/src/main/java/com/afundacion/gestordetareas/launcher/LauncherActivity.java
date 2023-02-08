@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.afundacion.gestordetareas.Fragments.MainFragment;
 import com.afundacion.gestordetareas.activities.LoginActivity;
 
 import com.afundacion.gestordetareas.activities.fragmentCreatiom;
@@ -25,19 +26,14 @@ public class LauncherActivity extends AppCompatActivity {
 
         startActivity(loginActivity);
 
-<<<<<<< HEAD
-       /* SharedPreferences preferences = getSharedPreferences("GESTOR_DE_TAREAS_PREFS",MODE_PRIVATE);
-=======
-       /* SharedPreferences preferences = getSharedPreferences("GESTOR_DE_TAREAS",MODE_PRIVATE);
->>>>>>> login-y-register
+        SharedPreferences preferences = getSharedPreferences("GESTOR_DE_TAREAS",MODE_PRIVATE);
         String email = preferences.getString("VALID_EMAIL", null);
         if(email==null) {
-            Intent loginActivity = new Intent(this, LoginActivity.class);
             startActivity(loginActivity);
         }
         else{
-            Intent homeActivity = new Intent(this, MainActivity.class);
+            Intent homeActivity = new Intent(this, MainFragment.class);
             startActivity(homeActivity);
-        }*/
+        }
     }
 }

@@ -64,12 +64,12 @@ public class fragmentCreatiom extends Fragment {
             @Override
             public void onClick(View view) {
                 //Formateamos la fecha y metemos una string a un objeto tipo calendar
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
                 Calendar calendar = Calendar.getInstance();
 
                 try {
                     if(fecha.getText() == null){
-                        data = dateFormat.parse("01/01/2001");
+                        data = dateFormat.parse("01-01-2001");
                     }else{
                         data = dateFormat.parse(fecha.getText().toString());
                     }

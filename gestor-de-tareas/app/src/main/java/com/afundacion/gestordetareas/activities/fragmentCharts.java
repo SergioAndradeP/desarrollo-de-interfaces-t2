@@ -1,6 +1,7 @@
 package com.afundacion.gestordetareas.activities;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,8 @@ import com.afundacion.gestordetareas.utils.RestClient;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.ValueDependentColor;
+import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
@@ -124,19 +127,27 @@ public class fragmentCharts extends Fragment {
         }
 
         List<DataPoint> points = new ArrayList<>();
-        points.add(new DataPoint(0, listInt[0]));
-        points.add(new DataPoint(1, listInt[1]));
-        points.add(new DataPoint(2, listInt[2]));
-        points.add(new DataPoint(3, listInt[3]));
-        points.add(new DataPoint(4, listInt[4]));
-        points.add(new DataPoint(5, listInt[5]));
-        points.add(new DataPoint(6, listInt[6]));
+        points.add(new DataPoint(-6, listInt[0]));
+        points.add(new DataPoint(-5, listInt[1]));
+        points.add(new DataPoint(-4, listInt[2]));
+        points.add(new DataPoint(-3, listInt[3]));
+        points.add(new DataPoint(-2, listInt[4]));
+        points.add(new DataPoint(-1, listInt[5]));
+        points.add(new DataPoint(0, listInt[6]));
 
 
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(points.toArray(new DataPoint[0]));
+        BarGraphSeries<DataPoint> series = new BarGraphSeries<>(points.toArray(new DataPoint[0]));
         graph.addSeries(series);
 
+        series.setDataWidth(2);
 
+        series.setValueDependentColor(new ValueDependentColor<DataPoint>() {
+            @Override
+            public int get(DataPoint data) {
+                return Color.rgb((int) data.getX()*255/4, (int) Math.abs(data.getY()*255/6), 100);
+            }
+        });
+        series.setSpacing(10);
 
 
     }

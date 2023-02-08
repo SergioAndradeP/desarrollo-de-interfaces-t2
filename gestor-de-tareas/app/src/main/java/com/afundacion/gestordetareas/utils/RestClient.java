@@ -63,10 +63,12 @@ public class RestClient {
 
 
     public void getNumberTareas(Response.Listener respuesta ,Response.ErrorListener error){
-
+        SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS_APP", MODE_PRIVATE);
+        String id = preferences.getString("id", null);
+        System.out.println(id);
             JsonArrayRequest request= new JsonArrayRequest(
                 Request.Method.GET,
-                    "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/2/tasks",
+                    "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/"+id+"/tasks",
                 null,
                     respuesta,
                 error);

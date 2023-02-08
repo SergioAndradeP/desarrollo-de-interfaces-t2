@@ -12,6 +12,7 @@ color white
 drawable ic_baseline_add_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+id NumberActivity
 id RecyclerView
 id RecyclerView2
 id boton_login
@@ -49,6 +50,7 @@ id tasks_manager
 id texto_registro
 id tipoTarea
 id title
+id titleEstadistica
 id tituloTarea
 id toolbar_id
 layout activity_creation

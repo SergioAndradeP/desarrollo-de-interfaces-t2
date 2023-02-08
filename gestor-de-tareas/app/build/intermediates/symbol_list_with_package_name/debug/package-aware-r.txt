@@ -2658,6 +2658,7 @@ id CTRL
 id FUNCTION
 id META
 id NO_DEBUG
+id NumberActivity
 id RecyclerView
 id RecyclerView2
 id SHIFT
@@ -3130,6 +3131,7 @@ id time
 id tipoTarea
 id title
 id titleDividerNoCustom
+id titleEstadistica
 id title_template
 id tituloTarea
 id toggle

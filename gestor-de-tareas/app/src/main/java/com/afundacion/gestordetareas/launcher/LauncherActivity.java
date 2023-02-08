@@ -25,7 +25,11 @@ public class LauncherActivity extends AppCompatActivity {
 
         startActivity(loginActivity);
 
+<<<<<<< HEAD
        /* SharedPreferences preferences = getSharedPreferences("GESTOR_DE_TAREAS_PREFS",MODE_PRIVATE);
+=======
+       /* SharedPreferences preferences = getSharedPreferences("GESTOR_DE_TAREAS",MODE_PRIVATE);
+>>>>>>> login-y-register
         String email = preferences.getString("VALID_EMAIL", null);
         if(email==null) {
             Intent loginActivity = new Intent(this, LoginActivity.class);

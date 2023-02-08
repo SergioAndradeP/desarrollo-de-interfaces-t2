@@ -10,9 +10,7 @@ import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
-
 import android.widget.Toast;
-
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -27,7 +25,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-
+import com.google.android.material.textfield.TextInputEditText;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,7 +36,9 @@ import java.util.zip.Inflater;
 
 public class RestClient {
 
-    private String URL = "";
+    private String URL = "https://63be7c54e348cb07620fda89.mockapi.io/api/v1";
+
+    private String MOCK_TOKEN = "7EW878QEE4E5DF5";
 
     private Context context;
 
@@ -62,8 +62,6 @@ public class RestClient {
         }
         return singleton;
     }
-
-    // Métodos que lanzan peticiones
 
 
     public void deleteTaskRequest(int id){
@@ -158,7 +156,39 @@ public class RestClient {
     });
                 queue.add(request);
     }
-};
+    
 
+    public void loginUser(EditText email, EditText password, Response.Listener<JSONArray> listener, Response.ErrorListener errorListener){
+
+        JsonArrayRequest request = new JsonArrayRequest(
+                Request.Method.GET,
+                URL + "/users?email="+email.getText().toString(),
+                null,
+                listener,
+                errorListener
+        );
+        this.queue.add(request);
+    }
+
+    public void registerUser(EditText nombre, EditText email, EditText contrasena, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener){
+        JSONObject requestBody = new JSONObject();
+        try {
+            requestBody.put("name", nombre.getText().toString());
+            requestBody.put("email", email.getText().toString());
+            requestBody.put("password", contrasena.getText().toString());
+            requestBody.put("token", MOCK_TOKEN);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+        JsonObjectRequest request = new JsonObjectRequest(
+                Request.Method.POST,
+                URL + "users",
+                requestBody,
+                listener,
+                errorListener
+        );
+        this.queue.add(request);
+    }
+}
 
 

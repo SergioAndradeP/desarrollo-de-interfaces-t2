@@ -70,18 +70,24 @@ public class RestClient {
         }
         JsonObjectRequestWithAuthentication request = new JsonObjectRequestWithAuthentication(
                 Request.Method.POST,
-                BASE_URL+"/users/2/tasks",
+                BASE_URL+"users/2/tasks",
                 tarea,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                    
+                        Toast.makeText(context, "Tarea añadida", Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, "No se ha podido añadir la tarea", Toast.LENGTH_LONG).show();
+                        if(error.networkResponse==null){
+                            Toast.makeText(context,"No se pudo establecer la conexión de "+tarea,Toast.LENGTH_LONG).show();
+                        }
+                        else{
+                            int serverCode = error.networkResponse.statusCode;
+                            Toast.makeText(context,"Estado de respuesta: "+serverCode,Toast.LENGTH_LONG).show();
+                        }
 
                     }
                 }, context

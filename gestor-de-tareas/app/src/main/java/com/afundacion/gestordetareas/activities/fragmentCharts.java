@@ -59,7 +59,7 @@ public class fragmentCharts extends Fragment {
         Date date6 = null;
         Date date7 = null;
         SimpleDateFormat formatter = null;
-        Date date8 = null;
+        Date date8= null;
         for (int i = 0; i < list.size(); i++) {
 
             try {
@@ -130,9 +130,7 @@ public class fragmentCharts extends Fragment {
                     listInt[6]++;
 
                 }
-
-
-                date8 = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(1));
+                date8 = new Date(System.currentTimeMillis());
                 dateS = formatter.format(date8);
                 if (dateS.equalsIgnoreCase(dateMS)) {
                     listInt[7]++;
@@ -145,37 +143,18 @@ public class fragmentCharts extends Fragment {
         }
 
         List<DataPoint> points = new ArrayList<>();
+        points.add(new DataPoint(date1, listInt[0]));
+        points.add(new DataPoint(date2, listInt[1]));
+        points.add(new DataPoint(date3, listInt[2]));
+        points.add(new DataPoint(date4, listInt[3]));
+        points.add(new DataPoint(date5, listInt[4]));
+        points.add(new DataPoint(date6, listInt[5]));
+        points.add(new DataPoint(date7, listInt[6]));
+        points.add(new DataPoint(date8, listInt[7]));
 
 
-
-        BarGraphSeries<DataPoint> series = new BarGraphSeries<>(new DataPoint[]{
-                new DataPoint(date1, listInt[0]),
-                new DataPoint(date2, listInt[1]),
-                new DataPoint(date3, listInt[2]),
-                new DataPoint(date4, listInt[3]),
-                new DataPoint(date5, listInt[4]),
-                new DataPoint(date6, listInt[5]),
-                new DataPoint(date7, listInt[6]),
-                new DataPoint(date8, listInt[7])
-
-        });
-        series.setSpacing(1);
-        graph.addSeries(series);
-
-        graph.getViewport().setXAxisBoundsManual(true);
-
-        graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getActivity()));
-        graph.getGridLabelRenderer().setNumHorizontalLabels(3);
-
-
-       // graph.getGridLabelRenderer().setHumanRounding(false);
-
-        graph.getViewport().setMinX(date1.getTime());
-        graph.getViewport().setMaxX(date8.getTime());
-
-        //graph.getViewport().setScalable(true);
-
-
+        BarGraphSeries<DataPoint> series = new BarGraphSeries<>(points.toArray(new DataPoint[]{}
+        ));
         series.setValueDependentColor(new ValueDependentColor<DataPoint>() {
             @Override
             public int get(DataPoint data) {
@@ -183,6 +162,18 @@ public class fragmentCharts extends Fragment {
             }
         });
 
+        series.setSpacing(2);
+
+        graph.addSeries(series);
+
+
+
+        graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getActivity()));
+        graph.getGridLabelRenderer().setNumHorizontalLabels(4);
+
+
+        graph.getViewport().setMinX(date1.getTime());
+        graph.getViewport().setMaxX(date8.getTime());
 
 
     }

@@ -43,6 +43,7 @@ public class TaskData {
     public void setDate(String date) {
         this.date = date;
     }
+    public void setCompleted(boolean completed) {this.completed = completed;}
 
     public String getDescription() {
         return description;

@@ -1,13 +1,20 @@
 package com.afundacion.gestordetareas.Fragments;
 
+
+
+import static android.content.Context.MODE_PRIVATE;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,6 +30,7 @@ import com.afundacion.gestordetareas.RestClient.RestClient;
 import com.afundacion.gestordetareas.TaskData;
 import com.afundacion.gestordetareas.TaskRecyclerViewAdapter;
 import com.afundacion.gestordetareas.TaskViewHolder;
+import com.afundacion.gestordetareas.Utils;
 import com.afundacion.gestordetareas.activities.fragmentCreatiom;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -92,6 +100,8 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Context context= getContext();
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -104,7 +114,8 @@ public class MainFragment extends Fragment {
         Context context= getContext();
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_main, container, false);
-
+        SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS_PREFS",MODE_PRIVATE);
+        int id = preferences.getInt("ID",0);
         //En el activity_main.xml solo tenemos el RecycerViewer. Aquí le asignamos al objeto
         //recyclerview el recyclerviewer del xml
         this.recyclerView = view.findViewById(R.id.RecyclerView);
@@ -117,7 +128,7 @@ public class MainFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction fr= getFragmentManager().beginTransaction();
+                FragmentTransaction fr= getActivity().getSupportFragmentManager().beginTransaction();
                 fr.replace(R.id.frameLayout,new fragmentCreatiom());
                 fr.commit();
             }
@@ -144,7 +155,7 @@ public class MainFragment extends Fragment {
                                     try {
                                         JSONObject task= response.getJSONObject(i);
                                         TaskData aTask= new TaskData(task);
-
+                                        //if(Utils.DateIsFuture(aTask.getDate()))
                                         listaTasks.add(aTask);
 
                                     } catch (JSONException e) {
@@ -182,6 +193,9 @@ public class MainFragment extends Fragment {
         //Se inicia e hilo dentro de Oncreate
         adapter= new TaskRecyclerViewAdapter(listaTasks,this);
         recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
+
 
         return view;
 
@@ -195,31 +209,37 @@ public class MainFragment extends Fragment {
         return inflatedView;
     }
 
+
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         Context context= getContext();
         View view= getView();
+
         int position;
-         super.onContextItemSelected(item);
-         switch (item.getItemId()){
-             case 101:
-                 //Toast.makeText(context,adapter.getPosition(), Toast.LENGTH_LONG).show();
-                 position= adapter.getPosition();
-                 recyclerView.removeViewAt(item.getGroupId());
-                 adapter.deleteTask(item.getGroupId());
+        int id;
+        super.onContextItemSelected(item);
+        switch (item.getItemId()){
+            case 101:
+                adapter.deleteTask(item.getGroupId());
+                recyclerView.setAdapter(adapter);
+
+                return true;
+            case 102:
+                id= adapter.getId(item.getGroupId());
+                adapter.completeTask(item.getGroupId());
+                recyclerView.setAdapter(adapter);
 
 
-                 return true;
-             case 102:
-                 Toast.makeText(context,"marcada como competada", Toast.LENGTH_LONG).show();
-                 adapter.markAsCompleted(item.getGroupId(),view);
-                 position= adapter.getPosition();
 
-                 return true;
-             default:
-                 return super.onContextItemSelected(item);
 
-         }
+                adapter.notifyDataSetChanged();
+
+
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+
+        }
     }
 
 

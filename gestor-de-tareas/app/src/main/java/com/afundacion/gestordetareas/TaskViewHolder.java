@@ -58,23 +58,26 @@ public class TaskViewHolder extends RecyclerView.ViewHolder implements View.OnCr
 
     public void showData(TaskData data, Activity activity){
 
-        //Se muestran los datos y se coloca el listenner en la vista. Al pulsar imagen o descripción
-        //se creará el Intent
+
         title.setText("Task: "+(data.getTitle()));
         date.setText("Deadline: "+data.getDate());
         description.setText("Description: "+data.getDescription());
+        if(data.getCompleted()){
+            title.setBackgroundColor(0xFF4CAF50);
+            date.setBackgroundColor(0xFF4CAF50);
+            description.setBackgroundColor(0xFF4CAF50);
+        }
+        if(!Utils.DateIsFuture(data.getDate()) && !data.getCompleted()){
+            title.setBackgroundColor(0xFF8D0432);
+            date.setBackgroundColor(0xFF8D0432);
+            description.setBackgroundColor(0xFF8D0432);
+
+        }
 
         vista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                /*Intent intent = new Intent(view.getContext(), CatalogActivity.class);
-                //Con putExtra le pasamos datos a CatalogActivity. Hay que acordarse de recogerlos
-                //En el Oncreate de ésta
-                intent.putExtra("name",data.getTitle() );
-                intent.putExtra("description", data.getDescription());
-                intent.putExtra("deadline", data.getDate());
-                view.getContext().startActivity(intent);*/
 
             }
         });

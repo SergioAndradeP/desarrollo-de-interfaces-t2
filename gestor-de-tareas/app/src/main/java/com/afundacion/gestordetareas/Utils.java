@@ -18,7 +18,7 @@ public  class Utils {
         int pYear = c1.get(Calendar.YEAR);
         int pMonth = c1.get(Calendar.MONTH)+1;
         int pDay= c1.get(Calendar.DAY_OF_MONTH);
-        String[] dateSplitted= date.split("/",3);
+        String[] dateSplitted= date.split("-",3);
         if(Integer.parseInt(dateSplitted[2]) > pYear){
             return true;
         } else if (Integer.parseInt(dateSplitted[2])==pYear && Integer.parseInt(dateSplitted[1])>pMonth){

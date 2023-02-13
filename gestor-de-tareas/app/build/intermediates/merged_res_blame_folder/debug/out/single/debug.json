@@ -20,12 +20,12 @@
         "source": "C:\\Users\\Toshiba\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-main-33:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Toshiba\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-merged_res-31:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\Toshiba\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-pngs-26:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
-    },
-    {
         "merged": "C:\\Users\\Toshiba\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-merged_res-31:\\layout_cabecera_drawerlayout.xml.flat",
         "source": "C:\\Users\\Toshiba\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-main-33:\\layout\\cabecera_drawerlayout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Toshiba\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-merged_res-31:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Toshiba\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-pngs-26:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
         "merged": "C:\\Users\\Toshiba\\.gradle\\daemon\\7.4\\com.afundacion.gestordetareas.app-merged_res-31:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",

@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,6 +37,7 @@ public class fragmentCreatiom extends Fragment {
     private RestClient client;
     private Button submit;
     private Date data;
+    private boolean correctDate = true;
     private Context context;
     @Nullable
     @Override
@@ -71,15 +73,19 @@ public class fragmentCreatiom extends Fragment {
                     if(fecha.getText() == null){
                         data = dateFormat.parse("01-01-2001");
                     }else{
+                        correctDate = true;
                         data = dateFormat.parse(fecha.getText().toString());
                     }
 
                 } catch (ParseException e) {
-                    e.printStackTrace();
+                    correctDate = false;
+                    Toast.makeText(context,"Fecha erronea", Toast.LENGTH_LONG).show();
                 }
-                calendar.setTime(data);
-                // Lanzamos el metodo con la peticion
-                client.submitTarea(titulo.getText().toString(), description.getText().toString(), fecha.getText().toString(), spinner.getSelectedItem().toString());
+                if(correctDate) {
+                    calendar.setTime(data);
+                    // Lanzamos el metodo con la peticion
+                    client.submitTarea(titulo.getText().toString(), description.getText().toString(), fecha.getText().toString(), spinner.getSelectedItem().toString());
+                }
 
 
             }

@@ -120,6 +120,7 @@ public class ManagerFragment extends Fragment {
         Thread carga= new Thread(loadJson);
         carga.start();
         myDialog.dismiss();*/
+        
         SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS", MODE_PRIVATE);
         String id = preferences.getString("id", null);
         JsonArrayRequest request= new JsonArrayRequest(Request.Method.GET,

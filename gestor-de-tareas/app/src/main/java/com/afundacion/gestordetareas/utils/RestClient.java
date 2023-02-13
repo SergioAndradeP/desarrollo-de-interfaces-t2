@@ -101,13 +101,14 @@ public class RestClient {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        Toast.makeText(context, "Tarea añadida" +tarea, Toast.LENGTH_LONG).show();
                     
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        Toast.makeText(context, "No se pudo añadir la tarea" +tarea, Toast.LENGTH_LONG).show();
                     }
                 }
 

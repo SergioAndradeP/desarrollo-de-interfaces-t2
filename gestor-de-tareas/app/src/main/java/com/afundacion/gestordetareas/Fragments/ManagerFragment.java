@@ -1,7 +1,10 @@
 package com.afundacion.gestordetareas.Fragments;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -117,8 +120,10 @@ public class ManagerFragment extends Fragment {
         Thread carga= new Thread(loadJson);
         carga.start();
         myDialog.dismiss();*/
+        SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS", MODE_PRIVATE);
+        String id = preferences.getString("id", null);
         JsonArrayRequest request= new JsonArrayRequest(Request.Method.GET,
-                "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/2/tasks",
+                "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/"+id+"/tasks",
 
                 null,
                 new Response.Listener<JSONArray>(){

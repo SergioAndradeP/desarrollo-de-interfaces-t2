@@ -66,11 +66,12 @@ public class RestClient {
 
     public void deleteTaskRequest(int id){
 
-
+        SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS", MODE_PRIVATE);
+        String userId = preferences.getString("id", null);
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.DELETE,
-                "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/2/tasks/"+id,null,
+                "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/"+userId+"/tasks/"+id,null,
 
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -90,6 +91,8 @@ public class RestClient {
     }
 
     public void isCompleted(int id){
+        SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS", MODE_PRIVATE);
+        String userId = preferences.getString("id", null);
 
         JSONObject task = new JSONObject();
         try {
@@ -99,7 +102,7 @@ public class RestClient {
         }
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.PUT,
-                "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/2/tasks/"+id,task,
+                "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/"+userId+"/tasks/"+id,task,
 
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -119,11 +122,13 @@ public class RestClient {
     }
 
     public void getTasks(ManagerFragment mf, View view){
+        SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS", MODE_PRIVATE);
+        String id = preferences.getString("id", null);
 
         List<TaskData> listaTasks= new ArrayList<>();
 
     JsonArrayRequest request= new JsonArrayRequest(Request.Method.GET,
-                        "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/2/tasks",
+                        "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/"+id+"/tasks",
 
                                 null,
                                 new Response.Listener<JSONArray>(){

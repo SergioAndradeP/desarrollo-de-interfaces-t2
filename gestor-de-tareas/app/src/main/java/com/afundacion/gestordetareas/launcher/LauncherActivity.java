@@ -22,7 +22,7 @@ public class LauncherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // Editad la actividad que lanza esta clase para ir probando lo que vais haciendo
 
-        Intent loginActivity = new Intent(this, MenuActivity.class);
+        Intent loginActivity = new Intent(this, LoginActivity.class);
 
         startActivity(loginActivity);
 
@@ -32,7 +32,7 @@ public class LauncherActivity extends AppCompatActivity {
             startActivity(loginActivity);
         }
         else{
-            Intent homeActivity = new Intent(this, MainFragment.class);
+            Intent homeActivity = new Intent(this, MenuActivity.class);
             startActivity(homeActivity);
         }
     }

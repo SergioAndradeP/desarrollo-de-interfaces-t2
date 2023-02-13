@@ -114,8 +114,8 @@ public class MainFragment extends Fragment {
         Context context= getContext();
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_main, container, false);
-        SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS_PREFS",MODE_PRIVATE);
-        int id = preferences.getInt("ID",0);
+        SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS",MODE_PRIVATE);
+        String id = preferences.getString("id",null);
         //En el activity_main.xml solo tenemos el RecycerViewer. Aquí le asignamos al objeto
         //recyclerview el recyclerviewer del xml
         this.recyclerView = view.findViewById(R.id.RecyclerView);
@@ -144,7 +144,7 @@ public class MainFragment extends Fragment {
             @Override
             public void run() {
                 request= new JsonArrayRequest(Request.Method.GET,
-                        "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/2/tasks",
+                        "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/"+id+"/tasks",
 
                         null,
                         new Response.Listener<JSONArray>(){

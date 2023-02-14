@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.afundacion.gestordetareas.R;
 import com.afundacion.gestordetareas.RestClient.RestClient;
+import com.afundacion.gestordetareas.utils.MenuActivity;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
@@ -45,15 +46,16 @@ public class LoginActivity extends AppCompatActivity {
                 client.loginUser(email, password, new Response.Listener<JSONArray>() {
                             @Override
                             public void onResponse(JSONArray response) {
-                                String receivedPassword, receivedToken;
+                                String receivedPassword, receivedToken,id;
                                 try {
                                     receivedPassword = response.getJSONObject(0).getString("password");
                                     receivedToken = response.getJSONObject(0).getString("token");
+                                    id = response.getJSONObject(0).getString("id");
                                 } catch (JSONException e) {
                                     throw new RuntimeException(e);
                                 }
                                 if(receivedPassword.equals(password.getText().toString())){
-                                    Intent main = new Intent(context, RegisterActivity.class);
+                                    Intent main = new Intent(context, MenuActivity.class);
                                     main.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                                             .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     context.startActivity(main);
@@ -61,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                                     SharedPreferences.Editor editor = preferences.edit();
                                     editor.putString("VALID_EMAIL", email.getText().toString());
                                     editor.putString("VALID_TOKEN", receivedToken);
+                                    editor.putString("id", id);
                                     editor.commit();
                                     finish();
                                 }

@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -53,38 +54,48 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     public void onBindViewHolder(@NonNull TaskViewHolder holder, int position) {
         TaskData dataInPositionToBeRendered= allthedata.get(position);
         holder.showData(dataInPositionToBeRendered, activity);
+
+
+
     }
 
     @Override
     public int getItemCount() {
         return allthedata.size();
     }
+    public void setItems(List<TaskData> tasks) {
+        this.allthedata = tasks;
+    }
+
     public  void deleteTask(int position){
 
-    int id= allthedata.get(position).getId();
+        int id= allthedata.get(position).getId();
 
-    client= RestClient.getInstance(context);
-    client.deleteTaskRequest(id);
+        allthedata.remove(position);
+        setItems(allthedata);
 
-    notifyDataSetChanged();
+
+        client= RestClient.getInstance(context);
+        client.deleteTaskRequest(id);
+
+
+
 
     }
-    public int getPosition(){
+    public void completeTask(int position){
+        int id= allthedata.get(position).getId();
+        allthedata.get(position).setCompleted(true);
+        setItems(allthedata);
+        //notifyDataSetChanged();
+        client= RestClient.getInstance(context);
+        client.isCompleted(id);
+    }
+    public int getId(int position){
+
         return allthedata.get(position).getId();
 
     }
-   
-    public void markAsCompleted(int position, View view){
-        int id= allthedata.get(position).getId();
-        client= RestClient.getInstance(context);
-        client.isCompleted(id);
-        title= view.findViewById(R.id.title);
-        title.setBackgroundColor(0xFF4CAF50);
-        date= view.findViewById(R.id.date);
-        date.setBackgroundColor(0xFF4CAF50);
-        description= view.findViewById(R.id.description);
-        description.setBackgroundColor(0xFF4CAF50);
-    }
+
 
 
 

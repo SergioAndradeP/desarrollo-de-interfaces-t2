@@ -78,33 +78,39 @@ public class RestClient {
 
     public void submitTarea(String titulo, String descripcion, String fecha, String tipo){
         JSONObject tarea = new JSONObject();
+        SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS", MODE_PRIVATE);
+        String id = preferences.getString("id", null);
+
 
         try{
-            tarea.put("title",titulo);
+            tarea.put("name",titulo);
             tarea.put("description",descripcion);
-            tarea.put("date",fecha);
-            tarea.put("type",tipo);
+            tarea.put("deadline",fecha);
+            tarea.put("category",tipo);
+            tarea.put("userId", id);
+            tarea.put("completed", false);
 
         }catch (JSONException e){
             throw new RuntimeException(e);
 
         }
-        JsonObjectRequestWithAuthentication request = new JsonObjectRequestWithAuthentication(
+        JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                "url",
+                BASE_URL+"users/"+id+"/tasks",
                 tarea,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        Toast.makeText(context, "Tarea añadida" +tarea, Toast.LENGTH_LONG).show();
                     
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        Toast.makeText(context, "No se pudo añadir la tarea" +tarea, Toast.LENGTH_LONG).show();
                     }
-                }, context
+                }
 
 
 

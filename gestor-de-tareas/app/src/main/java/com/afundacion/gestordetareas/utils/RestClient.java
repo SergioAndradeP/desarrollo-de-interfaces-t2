@@ -64,11 +64,11 @@ public class RestClient {
 
     public void getNumberTareas(Response.Listener respuesta ,Response.ErrorListener error){
         SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS", MODE_PRIVATE);
-        //String id = preferences.getString("id", null);
-        //System.out.println(id);
+        String id = preferences.getString("id", null);
+
             JsonArrayRequest request= new JsonArrayRequest(
                 Request.Method.GET,
-                    "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/1/tasks",
+                    "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/"+id+"/tasks",
                 null,
                     respuesta,
                 error);
@@ -101,14 +101,14 @@ public class RestClient {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Toast.makeText(context, "Tarea añadida" +tarea, Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "Tarea añadida" , Toast.LENGTH_LONG).show();
                     
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, "No se pudo añadir la tarea" +tarea, Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "No se pudo añadir la tarea" , Toast.LENGTH_LONG).show();
                     }
                 }
 

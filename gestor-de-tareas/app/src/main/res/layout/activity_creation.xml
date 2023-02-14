@@ -80,7 +80,7 @@
         android:layout_marginTop="5dp"
         android:ems="10"
         android:inputType="date"
-        android:text="00/00/2000"
+        android:text="1970-1-1"
         android:id="@+id/rellenarFecha"
 
         app:layout_constraintEnd_toEndOf="parent"

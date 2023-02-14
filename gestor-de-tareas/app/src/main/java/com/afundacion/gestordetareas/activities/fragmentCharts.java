@@ -163,7 +163,7 @@ public class fragmentCharts extends Fragment {
         graph.addSeries(series);
 
         //Formateamos las etiquetas para que no nos muestren el año
-        DateFormat df = new SimpleDateFormat("dd/MM", Locale.getDefault());
+        DateFormat df = new SimpleDateFormat("dd-MM", Locale.getDefault());
         DateAsXAxisLabelFormatter aLF = new DateAsXAxisLabelFormatter(getContext(),df);
         graph.getGridLabelRenderer().setLabelFormatter(aLF);
         //Fijamos el número de etiquetas a 5, para que nos muestre las 3 del medio, que son las más relevantes

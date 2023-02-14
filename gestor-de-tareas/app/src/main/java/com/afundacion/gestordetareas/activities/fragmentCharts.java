@@ -39,6 +39,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class fragmentCharts extends Fragment {
@@ -48,7 +49,7 @@ public class fragmentCharts extends Fragment {
     Context context;
     GraphView graph;
     RestClient client;
-    int[] listInt = new int[8];
+    int[] listInt = new int[7];
 
     public void setArraylist(List<TaskData> list) {
         Date date1 = null;
@@ -76,14 +77,12 @@ public class fragmentCharts extends Fragment {
 
                 String dateS = formatter.format(date1);
                 String dateMS = formatter.format(dateM);
-
-
                 if (dateS.equalsIgnoreCase(dateMS)) {
                     listInt[0]++;
 
                 }
 
-                date2 = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(6));
+                date2 = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(5));
                 dateS = formatter.format(date2);
 
 
@@ -92,7 +91,7 @@ public class fragmentCharts extends Fragment {
 
                 }
 
-                date3 = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(5));
+                date3 = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(4));
                 dateS = formatter.format(date3);
 
 
@@ -102,14 +101,14 @@ public class fragmentCharts extends Fragment {
                 }
 
 
-                date4 = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(4));
+                date4 = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(3));
                 dateS = formatter.format(date4);
                 if (dateS.equalsIgnoreCase(dateMS)) {
                     listInt[3]++;
 
                 }
 
-                date5 = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(3));
+                date5 = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(2));
                 dateS = formatter.format(date5);
 
                 if (dateS.equalsIgnoreCase(dateMS)) {
@@ -117,23 +116,17 @@ public class fragmentCharts extends Fragment {
 
                 }
 
-                date6 = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(2));
+                date6 = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(1));
                 dateS = formatter.format(date6);
                 if (dateS.equalsIgnoreCase(dateMS)) {
                     listInt[5]++;
 
                 }
 
-                date7 = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(1));
+                date7 = new Date(System.currentTimeMillis());
                 dateS = formatter.format(date7);
                 if (dateS.equalsIgnoreCase(dateMS)) {
                     listInt[6]++;
-
-                }
-                date8 = new Date(System.currentTimeMillis());
-                dateS = formatter.format(date8);
-                if (dateS.equalsIgnoreCase(dateMS)) {
-                    listInt[7]++;
 
                 }
             } catch (ParseException e) {
@@ -141,7 +134,7 @@ public class fragmentCharts extends Fragment {
             }
 
         }
-
+        //Sólo necesitamos 7 fechas
         List<DataPoint> points = new ArrayList<>();
         points.add(new DataPoint(date1, listInt[0]));
         points.add(new DataPoint(date2, listInt[1]));
@@ -150,32 +143,37 @@ public class fragmentCharts extends Fragment {
         points.add(new DataPoint(date5, listInt[4]));
         points.add(new DataPoint(date6, listInt[5]));
         points.add(new DataPoint(date7, listInt[6]));
-        points.add(new DataPoint(date8, listInt[7]));
+
 
 
         BarGraphSeries<DataPoint> series = new BarGraphSeries<>(points.toArray(new DataPoint[]{}
         ));
+
+
+
         series.setValueDependentColor(new ValueDependentColor<DataPoint>() {
             @Override
             public int get(DataPoint data) {
                 return Color.rgb((int) data.getX() * 255 / 4, (int) Math.abs(data.getY() * 255 / 6), 100);
             }
         });
-
-        series.setSpacing(2);
+        //Fijamos el espacio entre las barras a 0, para que estén pegadas
+        series.setSpacing(0);
 
         graph.addSeries(series);
 
+        //Formateamos las etiquetas para que no nos muestren el año
+        DateFormat df = new SimpleDateFormat("dd/MM", Locale.getDefault());
+        DateAsXAxisLabelFormatter aLF = new DateAsXAxisLabelFormatter(getContext(),df);
+        graph.getGridLabelRenderer().setLabelFormatter(aLF);
+        //Fijamos el número de etiquetas a 5, para que nos muestre las 3 del medio, que son las más relevantes
+        graph.getGridLabelRenderer().setNumHorizontalLabels(5);
 
-
-        graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getActivity()));
-        graph.getGridLabelRenderer().setNumHorizontalLabels(4);
-
-
-        graph.getViewport().setMinX(date1.getTime());
-        graph.getViewport().setMaxX(date8.getTime());
-
-
+        graph.getViewport().setXAxisBoundsManual(true);
+        //Fijamos el mínimo al día anterior y el máximo al día posterior, para que no se vean cortadas la barras
+        graph.getViewport().setMinX(date1.getTime()-TimeUnit.DAYS.toMillis(1));
+        graph.getViewport().setMaxX(date7.getTime()+TimeUnit.DAYS.toMillis(1));
+        graph.getGridLabelRenderer().setHumanRounding(false);
     }
 
     @Nullable

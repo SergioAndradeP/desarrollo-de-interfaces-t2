@@ -1,3 +1,4 @@
+
 package com.afundacion.gestordetareas.Fragments;
 
 
@@ -112,14 +113,10 @@ public class MainFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         Context context= getContext();
-        // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_main, container, false);
         SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS",MODE_PRIVATE);
         String id = preferences.getString("id",null);
-        //En el activity_main.xml solo tenemos el RecycerViewer. Aquí le asignamos al objeto
-        //recyclerview el recyclerviewer del xml
         this.recyclerView = view.findViewById(R.id.RecyclerView);
-
         this.queue = Volley.newRequestQueue(context);
         List<TaskData> listaTasks= new ArrayList<>();
         //Creaamos el floating button y lo asociamos con el fragmento de añadir tarea
@@ -174,6 +171,7 @@ public class MainFragment extends Fragment {
                         new Response.ErrorListener(){
                             @Override
                             public void onErrorResponse(VolleyError error) {
+                                myDialog.dismiss();
                                 if(error.networkResponse==null){
                                     Toast.makeText(context, "Server could not be reached", Toast.LENGTH_LONG).show();
                                 }else{
@@ -190,7 +188,7 @@ public class MainFragment extends Fragment {
         };
         Thread carga= new Thread(loadJson);
         carga.start();
-        //Se inicia e hilo dentro de Oncreate
+
         adapter= new TaskRecyclerViewAdapter(listaTasks,this);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
@@ -241,6 +239,7 @@ public class MainFragment extends Fragment {
 
         }
     }
+
 
 
 }

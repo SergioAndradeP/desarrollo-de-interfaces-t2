@@ -52,7 +52,7 @@ public class TaskViewHolder extends RecyclerView.ViewHolder implements View.OnCr
         title= (TextView) itemView.findViewById(R.id.title);
         vista = (View) itemView.findViewById(R.id.holder);
         itemView.setOnCreateContextMenuListener(this);
-        //La vista es holder, el constraintlayout de logo_view_holder.xml
+
 
     }
 

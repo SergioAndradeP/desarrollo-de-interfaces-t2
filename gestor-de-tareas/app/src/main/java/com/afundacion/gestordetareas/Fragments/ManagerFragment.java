@@ -1,3 +1,4 @@
+
 package com.afundacion.gestordetareas.Fragments;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -102,7 +103,7 @@ public class ManagerFragment extends Fragment {
         List<TaskData> listaTasks= new ArrayList<>();
         this.queue = Volley.newRequestQueue(context);
         this.recyclerView = view.findViewById(R.id.RecyclerView2);
-        /*myBuilder = new AlertDialog.Builder(context);
+        myBuilder = new AlertDialog.Builder(context);
         myBuilder.setView(inflateDialogView());
         myDialog = myBuilder.create();
         myDialog.show();
@@ -111,70 +112,65 @@ public class ManagerFragment extends Fragment {
             @Override
             public void run() {
 
-                client = RestClient.getInstance(context);
-                client.getTasks(newInstance(), view);
+                SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS", MODE_PRIVATE);
+                String id = preferences.getString("id", null);
+                JsonArrayRequest request= new JsonArrayRequest(Request.Method.GET,
+                        "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/"+id+"/tasks",
+
+                        null,
+                        new Response.Listener<JSONArray>(){
+                            @Override
+                            public void onResponse(JSONArray response) {
+
+                                for (int i=0;i<response.length();i++){
+                                    try {
+                                        JSONObject task= response.getJSONObject(i);
+                                        TaskData aTask= new TaskData(task);
+
+                                        listaTasks.add(aTask);
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+
+                                //Creamos el adaptador y se lo pasamos al reciclerView
+                                ManagerRecyclerViewAdapter adapter= new ManagerRecyclerViewAdapter(listaTasks,fragment);
+                                recyclerView.setAdapter(adapter);
+                                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+
+
+                            }
+                        },
+                        new Response.ErrorListener(){
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                if(error.networkResponse==null){
+                                    Toast.makeText(context, "Server could not be reached", Toast.LENGTH_LONG).show();
+                                }else{
+                                    int serverCode=error.networkResponse.statusCode;
+                                    Toast.makeText(context,"Server KO: "+serverCode, Toast.LENGTH_LONG).show();
+                                }
+                            }
+
+
+                        });
+                queue.add(request);
+
 
             }
 
         };
         Thread carga= new Thread(loadJson);
         carga.start();
-        myDialog.dismiss();*/
+        myDialog.dismiss();
         
-        SharedPreferences preferences = context.getSharedPreferences("GESTOR_DE_TAREAS", MODE_PRIVATE);
-        String id = preferences.getString("id", null);
-        JsonArrayRequest request= new JsonArrayRequest(Request.Method.GET,
-                "https://63be7c54e348cb07620fda89.mockapi.io/api/v1/users/"+id+"/tasks",
-
-                null,
-                new Response.Listener<JSONArray>(){
-                    @Override
-                    public void onResponse(JSONArray response) {
-
-                        for (int i=0;i<response.length();i++){
-                            try {
-                                JSONObject task= response.getJSONObject(i);
-                                TaskData aTask= new TaskData(task);
-
-                                listaTasks.add(aTask);
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-
-                        //Creamos el adaptador y se lo pasamos al reciclerView
-                        ManagerRecyclerViewAdapter adapter= new ManagerRecyclerViewAdapter(listaTasks,fragment);
-                        recyclerView.setAdapter(adapter);
-                        recyclerView.setLayoutManager(new LinearLayoutManager(context));
-
-                        //myDialog.dismiss();//Al terminar cerramos el spinner
-                    }
-                },
-                new Response.ErrorListener(){
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        if(error.networkResponse==null){
-                            Toast.makeText(context, "Server could not be reached", Toast.LENGTH_LONG).show();
-                        }else{
-                            int serverCode=error.networkResponse.statusCode;
-                            Toast.makeText(context,"Server KO: "+serverCode, Toast.LENGTH_LONG).show();
-                        }
-                    }
 
 
-                });
-        queue.add(request);
         return view;
 
     }
 
-
-
-    public void LoadRecycler(List<TaskData> list){
-        adapter= new TaskRecyclerViewAdapter(list,this);
-        recyclerView.setAdapter(adapter);
-    }
 
     private View inflateDialogView() {
         //Aquí se recoge el layout de loading, donde está el spinner
@@ -183,5 +179,6 @@ public class ManagerFragment extends Fragment {
 
         return inflatedView;
     }
+
 
 }

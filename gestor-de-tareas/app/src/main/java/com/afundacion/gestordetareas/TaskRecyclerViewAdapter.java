@@ -54,28 +54,7 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskViewHolder
     public void onBindViewHolder(@NonNull TaskViewHolder holder, int position) {
         TaskData dataInPositionToBeRendered= allthedata.get(position);
         holder.showData(dataInPositionToBeRendered, activity);
-        /*if(allthedata.get(position).getCompleted()){
-           //holder.itemView.setBackgroundColor(Color.GREEN);
-            title= holder.itemView.findViewById(R.id.title);
-            title.setBackgroundColor(0xFF4CAF50);
-            date= holder.itemView.findViewById(R.id.date);
-            date.setBackgroundColor(0xFF4CAF50);
-            description= holder.itemView.findViewById(R.id.description);
-            description.setBackgroundColor(0xFF4CAF50);
 
-
-
-
-        }
-        if(!Utils.DateIsFuture(allthedata.get(position).getDate()) && !allthedata.get(position).getCompleted()){
-            title= holder.itemView.findViewById(R.id.title);
-            title.setBackgroundColor(0xFF8D0432);
-            date= holder.itemView.findViewById(R.id.date);
-            date.setBackgroundColor(0xFF8D0432);
-            description= holder.itemView.findViewById(R.id.description);
-            description.setBackgroundColor(0xFF8D0432);
-
-        }*/
 
 
     }

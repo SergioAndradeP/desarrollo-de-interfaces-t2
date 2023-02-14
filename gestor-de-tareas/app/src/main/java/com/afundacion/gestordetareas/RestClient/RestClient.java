@@ -144,7 +144,7 @@ public class RestClient {
                 }
             }
             Toast.makeText(context,"Respuesta OK", Toast.LENGTH_LONG).show();
-            mf.LoadRecycler(listaTasks);
+
 
         }
     },
